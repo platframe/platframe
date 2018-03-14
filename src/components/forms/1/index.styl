@@ -1,0 +1,81 @@
+form-1(scheme = __default, width = rem(300px))
+    .form-1
+        display: flex
+        width: width
+        flex-flow: row wrap
+        justify-content: center
+        align-content: flex-start
+        scheme.default
+        fieldset
+            width: 100%
+            margin-bottom: rem(20px)
+            legend
+                font-size: 1.3rem
+                font-weight: 600
+                padding: rem(10px) 0
+                color: scheme.default
+            // parent field group
+            .field
+                display: flex
+                flex-wrap: nowrap
+                align-content: center
+                align-items: center
+                position: relative
+                width: inherit
+            // most basic form
+            &.core
+                // common field properties
+                input, textarea
+                    width: width
+                    margin: rem(2px) 0
+                    padding: rem(5px)
+                    font-size: 1.1rem
+                    border: 1px solid
+                    border-radius: 0
+                    &::placeholder { color: _60 }
+                    // feedback cues
+                    & + .cue::after
+                        display: flex
+                        content: ''
+                        width: rem(38px)
+                        height: @width
+                        position: absolute
+                        top: rem(4px)
+                        margin-left: rem(3px)
+                        margin-right: rem(-20px) // adjust for images
+                        background-size: cover
+                        background-repeat: no-repeat
+                        background-color: transparent
+            // optional spam quiz
+            &.spam
+                color: scheme.default
+                font-weight: 600
+                width: 14.4rem
+                margin: inherit auto
+                span
+                    float: left
+                    margin-right: 6px
+                    font-weight: inherit
+                div
+                    float: left
+                    label
+                        margin: 0; padding: 0
+                        margin-right: 11px
+                        font-weight: inherit
+                    &:last-of-type label
+                        margin-right: 0
+        textarea
+            min-height: rem(120px)
+        // feedback cue graphics
+        :required + .cue::after
+            background-image: url('/assets/images/sprite/views.svg#form-1-field-required')
+        :required:valid + .cue::after
+            background-image: url('/assets/images/sprite/views.svg#form-1-field-valid')
+        :required:valid:focus + .cue::after
+            background-image: url('/assets/images/sprite/views.svg#form-1-field-valid')
+        :required:invalid:focus + .cue::after
+            background-image: url('/assets/images/sprite/views.svg#form-1-field-invalid')
+        // submit button
+        button
+            button()
+        { block }

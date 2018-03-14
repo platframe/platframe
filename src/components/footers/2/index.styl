@@ -1,0 +1,95 @@
+footer-2(scheme = __default)
+    .footer-2
+        display: flex
+        width: 100vw
+        height: auto
+        color: scheme.footer.default
+        padding: 40px 0
+        align-items: center
+        justify-content: center
+        background: scheme.footer.background
+        +min(2)
+            height: 360px
+        > div
+            display: flex
+            width: 85%
+            min-width: 240px
+            +max(2)
+                flex-wrap: wrap
+            +min(2)
+                width: 88%
+                justify-content: space-between
+            +min(3)
+                width: 63%
+                min-width: 1400px
+            div
+                display: flex
+                width: 100%
+                align-items: center
+                justify-content: center
+                +min(2)
+                    display: flex
+                    align-items: center
+                ul
+                    margin: 0
+                    padding: 0
+                    +max(2)
+                        text-align: center
+                    li
+                        font-size: 1rem
+                        list-style: none
+                        background: inherit
+                        +max(2)
+                            display: inline-block
+                &:not(:last-of-type) ul li
+                    margin: 5px 8px
+                    padding: 0
+                &:nth-of-type(1) ul li,
+                &:nth-of-type(2) ul li
+                    +min(2)
+                        margin: 0
+                        padding: 0 0 8px
+                &:nth-of-type(3) table
+                    +max(2)
+                        margin: 25px 0
+                        text-align: center
+                        tr
+                            margin-right: 10px
+                            display: inline-table
+                            &:last-of-type
+                                margin-right: 0
+                    th
+                        font-size: 1rem
+                        text-align: left
+                        padding: 0 0 5px
+                    td
+                        font-size: 1rem
+                        margin: 0
+                        padding: 0 0 7px
+                        line-height: 1
+                        vertical-align: top
+                        +min(2)
+                            padding: 0 0 6px
+                    svg
+                        width: 16px
+                        height: 16px
+                        margin: 0 6px 0 0
+                        padding: 0
+                        +min(2)
+                            width: 15px
+                            height: 14px
+                &:nth-of-type(4)
+                    ul li
+                        margin: 0 12px 8px 0
+                        +min(2)
+                            display: inline-block
+                            margin: 0 10px 0 0
+                        &:last-of-type
+                            margin-right: 0
+                        a svg
+                            width: 40px
+                            height: 40px
+                            +min(2)
+                                width: 30px
+                                height: 30px
+        { block }

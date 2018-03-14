@@ -1,0 +1,59 @@
+mixin form-1(action, method, phone, spam, hook)
+    form(class=hook ? "form-1 " + hook :  "form-1")
+
+        fieldset.core
+            legend Contact us
+
+            .field
+
+                input(
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    pattern!="^[^\\d$~@#%^&+*=|:;<>?\\\\/\\(\\)\\[\\]\\{\\}]+$"
+                    required)
+
+                span.cue
+
+            .field
+
+                input(
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    pattern!="^[A-z0-9_\\+-]+(\\.[A-z0-9_\\+-]+)*@[A-z0-9-]+(\\.[A-z0-9-]+)*\\.([A-z]{2,6})$"
+                    required)
+
+                span.cue
+
+            if phone
+                .field
+                    input(type="tel" name="phone" placeholder="Phone")
+
+            .field
+                textarea(placeholder="Your message.." name="message" required)
+                span.cue
+
+        if spam
+            fieldset.spam
+
+                span 6 + 4 =
+
+                div
+                    input(type="radio" name="spam" id="option-1" value="9" )
+                    label(for="option-1") 9
+                div
+                    input(type="radio" name="spam" id="option-2" value="6")
+                    label(for="option-2") 6
+                div
+                    input(type="radio" name="spam" id="option-3" value="10" required)
+                    label(for="option-3") 10
+                div
+                    input(type="radio" name="spam" id="option-4" value="12")
+                    label(for="option-4") 12
+
+        button(
+            type="submit"
+            formaction=action
+            formmethod=method
+            ) Send Message

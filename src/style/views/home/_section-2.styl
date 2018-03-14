@@ -1,0 +1,64 @@
+.section-2
+    .content
+        align-items: center
+        +max(1)
+            flex-direction: column
+        +max(2)
+            flex-wrap: wrap
+            justify-content: center
+        +min(2)
+            align-items: baseline
+            justify-content: space-between
+        div
+            display: flex
+            align-items: center
+            flex-direction: column
+            +between(1, 2)
+                flex-basis: 50%
+                min-width: 300px
+                flex-grow: 1
+                padding: rem(30px) rem(40px)
+            +max(1)
+                &:not(:last-of-type)
+                    margin-bottom: rem(40px)
+            +min(2)
+                width: 20%
+            svg
+                height: rem(130px)
+                fill: _graphic
+                padding: 0
+                +max(2)
+                    width: rem(150px)
+                +min(2)
+                    width: 100%
+                    height: 100%
+                    padding: rem(20px)
+                +min(3)
+                    padding: rem(60px)
+            article
+                +max(1)
+                    margin-top: rem(20px)
+                    text-align: center
+                +min(2)
+                    width: 100%
+                h2
+                    font-size: 2.5rem
+                    margin: 0 0 rem(10px)
+                    padding: 0
+                    +min(1)
+                        font-size: 2.2rem
+                        margin: rem(20px) 0 rem(10px)
+                        text-align: center
+                    +min(2)
+                        margin: rem(25px) 0 rem(15px)
+                p
+                    font-size: 1.1rem
+                    margin: 0
+                    line-height: 1.4
+                    +min(1)
+                        overflow: hidden
+                        text-align: center
+                    +min(2)
+                        font-size: 1rem
+                    +min(3)
+                        font-size: 1.1rem

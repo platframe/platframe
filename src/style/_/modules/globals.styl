@@ -1,0 +1,22 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━  GOLDEN RATIO  ━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Assistance for golden ratio-based design.                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// φ golden ratio
+phi = major = 1.618
+// Φ ratio conjugate
+Phi = minor = 0.618
+// expressed as percentages
+$major = unit((phi - 1) * 100, '%')
+$minor = unit((1 - Phi) * 100, '%')
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  DEFAULTS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Sundry defaults.                                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// color and assign box properties
+_border     = _r = scheme.border
+_background = _b = scheme.background
+
+// border radius
+radii = 4px

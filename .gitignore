@@ -1,0 +1,25 @@
+### NATIVE
+
+# root
+/dev/
+/prod/
+
+# deps
+node_modules/
+
+### 3RD PARTY
+
+# JetBrains
+.idea/
+*.iml
+
+# Komodo
+*.komodoproject
+
+# Gimp
+*.xcf
+
+### GENERIC
+
+*~
+*.log

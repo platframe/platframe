@@ -1,0 +1,36 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━  COMPATIBILITY  ━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Interact with the user based on browser state.                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// JavaScript is unsupported
+$no-js
+    position: fixed
+    top: 0
+    font-size: 1.5rem
+    padding: 29px 0 28px 0
+    margin: 0
+    width: 100%
+    background: rgba(0, 0, 0, 0.8)
+    text-shadow: -1px -1px 0 rgb(0, 0, 0)
+    color: #ddd
+    text-align: center
+    letter-spacing: -0.02rem
+    z-index: 3
+
+// incompatibile UA
+$upgrade
+    position: fixed
+    top: 0
+    font-size: 1.5rem
+    padding: 29px 0 28px 0
+    margin: 0
+    width: 100%
+    background: #444
+    color: #ddd
+    text-align: center
+    letter-spacing: -0.02rem
+    z-index: 3
+    & a
+        color: #FFD760
+        &:hover
+            color: #FFC014

@@ -1,0 +1,125 @@
+header-2(scheme = __default)
+    _border = scheme.border
+    .header-2
+        position: fixed
+        top: 0
+        width: 100%
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        background: scheme.header.background
+        border-bottom: 1px solid _border
+        z-index: 2
+        .core
+            display: flex
+            flex-flow: row wrap
+            width: inherit
+            min-height: rem(100px)
+            align-content: center
+            +max(2)
+                padding-bottom: rem(15px)
+            +min(2)
+                padding: 0 rem(50px)
+                justify-content: space-between
+            +min(3)
+                width: b3_content_width
+                min-width: b3_content_min_width
+                padding: 0
+            h1
+                display: flex
+                width: 100%
+                font-size: 1.9rem
+                font-weight: 600
+                align-items: center
+                letter-spacing: normal
+                margin-bottom: 0
+                padding: rem(20px) 0
+                justify-content: center
+                +min(1)
+                    font-size: 1.4rem
+                +min(2)
+                    width: auto
+                    padding: initial
+                    justify-content: initial
+                a
+                    display: flex
+                    align-items: center
+                    svg
+                        width: 24px
+                        height: 24px
+                        margin: -1px 8px 0 0
+                        +min(1)
+                            width: 20px
+                            height: 20px
+                            margin: 0 8px 0 0
+            h2
+                font-size: 1rem
+                text-transform: lowercase
+                +min(1)
+                    font-size: 1.3rem
+                    letter-spacing: normal
+                +max(2)
+                    margin-top: rem(8px)
+                +min(2)
+                    font-size: 1.8rem
+                    font-weight: 600
+            div // nav: breadcrumbs (optional)
+                display: flex
+                align-items: baseline
+                +max(2)
+                    margin: auto
+                nav
+                    display: flex
+                    align-items: baseline
+                    anchors(scheme, header) // coerce nav styles to inherit from header scope
+                    +min(1)
+                        margin-right: rem(5px)
+                    +min(2)
+                        margin-right: rem(10px)
+                    ul
+                        display: inline-flex
+                        list-style-type: none
+                        a
+                            font-size: .95rem
+                            font-weight: 400
+                            text-transform: lowercase
+        .peripheral
+            width: inherit
+            padding: 0 rem(50px)
+            border-bottom 1px solid _border
+            nav
+                ul
+                    display: flex
+                    flex-flow: row nowrap
+                    +max(2)
+                        padding: rem(10px) 0
+                        flex-wrap: wrap
+                        justify-content: center
+                    li
+                        margin: 0
+                        border-left: 1px solid _border
+                        +max(2)
+                            border: 0
+                            &:not(:first-of-type)::before
+                                content: '\25AA'
+                        &:last-of-type
+                            border-right: 1px solid _border
+                            +max(2)
+                                border: 0
+                        a
+                            display: inline-block
+                            font-weight: 400
+                            white-space: nowrap
+                            padding: rem(12px) rem(20px)
+                            +max(2)
+                                width: inherit
+                                margin: rem(10px)
+                                padding: 0
+                            &:hover
+                                text-decoration: none
+                                text-shadow: -1px -1px 0 _10
+                                background: darken(scheme.header.background, 15%)
+                                +max(2)
+                                    text-decoration: underline
+                                    background: none
+        { block }

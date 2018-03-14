@@ -1,0 +1,71 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━  EQUALIZE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Supersede UA defaults for consistency and preference.              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// base font size
+base = 16
+
+// sizing approach
+*, *:before, *:after
+    box-sizing: border-box
+
+// reset
+html, body, div, h1, h2, h3, h4, h5, h6, a, p, svg, span, object, iframe, blockquote, pre, abbr,
+address, cite, code, del, dfn, em,  img, ins, kbd, q, samp, small, strong,  sub, sup, var, b, i,
+dl, dt, dd,  ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+th, td, article, aside, canvas, details,  figcaption, figure, footer, header, menu, nav, button,
+section, time, mark, audio, video
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+    min-width: 0
+    line-height: 1
+    font-size: 100%
+    font-weight: normal
+
+// interaction
+html
+    scroll-behavior: smooth
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━  FIREFOX  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Target browser-specific issues.                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// eliminate border around button's text on click
+button, input[type="reset"], input[type="button"], input[type="submit"], input[type="file"] > input[type="button"]
+    &::-moz-focus-inner
+        border: none
+
+// eliminate dotted line on focus
+select:-moz-focusring
+    color: transparent
+    text-shadow: 0 0 0 #777 // text color
+
+// remove default opacity
+::-moz-placeholder
+    opacity: 1
+
+// remove persistent red box shadow
+:invalid
+    box-shadow: none
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━  CHROMIUM  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Target browser-specific issues (Chromium-based).                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// remove border on input elements
+:focus
+    outline: none
+
+// change autofilled background to white
+input:-webkit-autofill
+    -webkit-box-shadow: 0 0 0 100px white inset
+
+/*━━━━━━━━━━━━━━━━━━━━━━  INTERNET EXPLORER  ━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Target browser-specific issues (version ≤ 11)                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// correct overflow displayed oddly
+svg:not(:root)
+    overflow: hidden

@@ -1,0 +1,22 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━  STRUCTURE  ━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+columns(count, width, gap, fill = balance, span = none, rule...)
+    column-gap: gap
+    column-rule: rule
+    column-fill: fill
+    column-span: span
+    column-width: width
+    column-count: count
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  EFFECTS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+dropcap(color, size, weight, line, margin...)
+    &:first-of-type:first-letter
+        color: color
+        font-size: size
+        font-weight: weight
+        line-height: line
+        letter-spacing: 0
+        text-transform: uppercase
+        float: left
+        margin: margin

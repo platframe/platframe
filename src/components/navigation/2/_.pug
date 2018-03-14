@@ -1,0 +1,8 @@
+mixin nav-2(anchors, hook)
+    nav(class=hook ? "nav-2 " + hook :  "nav-2", role="navigation")
+
+        ul
+            for anchor in anchors
+
+                li
+                    a(href=anchor.href)= anchor.name

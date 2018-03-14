@@ -1,0 +1,59 @@
+default:
+  description: |
+    'Provision for development'
+  tasks:
+    - 'develop'
+
+develop:
+  description: |
+    'Provision for development'
+  tasks:
+    - 'clean'
+    - 'sync:dev'
+    - 'pug:dev'
+    - 'stylus:dev'
+    - 'postcss:dev'
+    - 'eslint'
+    - 'rollup'
+    - 'svg_sprite'
+    - 'pngmin'
+    - 'base64'
+    - 'browserSync'
+    - 'notify'
+    - 'watch'
+
+build:
+  description: |
+    'Provision for deployment'
+  tasks:
+    - 'test'
+    - 'clean'
+    - 'pug:prod'
+    - 'stylus:prod'
+    - 'postcss:prod'
+    - 'rollup'
+    - 'uglify'
+    - 'sync:prod'
+    - 'svg_sprite'
+    - 'pngmin'
+    - 'base64'
+
+serve:
+  description: |
+    'Serve production build'
+  tasks:
+    - 'connect'
+
+preflight:
+  description: |
+    'Verify the build'
+  tasks:
+    - 'test'
+    - 'build'
+    - 'serve'
+
+deploy:
+  description: |
+    'Deploy to production'
+  tasks:
+    - 'build'

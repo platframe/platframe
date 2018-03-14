@@ -1,0 +1,3 @@
+mixin banner-1(url, text, hook)
+    div(class=hook ? "banner-1 " + hook :  "banner-1")
+        a(href=url || '#')= text || 'Banner'

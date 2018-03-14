@@ -1,0 +1,19 @@
+# avoid duplicate builds
+if: tag NOT present
+
+# safelist
+branches:
+  only:
+  - master
+
+# env
+language: node_js
+node_js:
+  - "8"
+
+# setup
+install: yarn
+script: npm run build
+cache:
+  directories:
+    - "node_modules"

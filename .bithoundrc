@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "config/**",
+    "Gruntfile.js"
+  ],
+  "test": [
+    "**/tests/**"
+  ]
+}
