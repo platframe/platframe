@@ -104,7 +104,7 @@ You can optionally wire your deployment logic to `grunt deploy`
 The documentation can be found at [platframe.com/docs](http://platframe.com/docs)
 
 ## Contributing
-Refer to the contribution [guidelines](CONTRIBUTING.md) on how to get started.
+Refer to the contribution [guidelines](.github/CONTRIBUTING.md) on how to get started.
 
 ---
 
