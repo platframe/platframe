@@ -2,7 +2,7 @@
 Whether you're a newcomer or experienced contributor, help with updating, extending or otherwise improving Platframe is greatly appreciated. Please use the guidelines below to get started.
 
 ## Issue tracker
-The [issue tracker](/issues) should be used for bug reports and feature requests. First, scan the existing list to ensure that your concern is not already addressed. If it is already created but unassigned, you're welcome to request custody of the issue if you're so inclined. Otherwise, [create a new report](/issues/new).
+The [issue tracker](https://github.com/platframe/platframe/issues) should be used for bug reports and feature requests. First, scan the existing list to ensure that your concern is not already addressed. If it is already created but unassigned, you're welcome to request custody of the issue if you're so inclined. Otherwise, [create a new report](https://github.com/platframe/platframe/issues/new).
 
 ## Feature requests
 To avoid waisted effort, new feature requests will be peer-reviewed to establish the viability and importance of your request as it relates to the current purpose and scope of the project. 
@@ -71,4 +71,4 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 ----------
 
 **Note**: By submitting a contribution, you agree to allow the project owners to
-license your work under the terms of the [MIT](LICENSE) license.
+license your work under the terms of the [MIT](https://github.com/platframe/platframe/blob/master/LICENSE) license.
