@@ -1,8 +1,8 @@
-mixin form-1(action, method, phone, spam, hook)
-    form(class=hook ? "form-1 " + hook :  "form-1")
+mixin form-1(legend, action, method, phone, spam, hook)
+    form(legend, class=hook ? "form-1 " + hook :  "form-1")
 
         fieldset.core
-            legend Contact us
+            legend= legend || "Contact"
 
             .field
 
