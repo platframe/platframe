@@ -4,6 +4,14 @@ module.exports = {
 
     dev: {
         files: [
+            // logic
+            {
+                expand: true,
+                cwd: '<%= src_log %>',
+                src: ['**/*.{py,rb,php*}'],
+                dest: '<%= dev_log %>',
+                extDot: 'last'
+            },
             // linked bitmaps
             {
                 expand: true,
@@ -35,6 +43,14 @@ module.exports = {
 
     prod: {
         files: [
+            // logic
+            {
+                expand: true,
+                cwd: '<%= src_log %>',
+                src: ['**/*.{py,rb,php*}'],
+                dest: '<%= prod_log %>',
+                extDot: 'last'
+            },
             // linked bitmaps
             {
                 expand: true,
