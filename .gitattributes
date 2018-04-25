@@ -1,0 +1,5 @@
+# line endings
+*      text=auto
+*.js   text eol=lf
+*.pug  text eol=lf
+*.styl text eol=lf
