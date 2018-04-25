@@ -6,7 +6,7 @@ module.exports = {
             index: 'index.html'
         },
         notify: false,
-        online: false, // speed up by skipping DNS lookup
+        online: true,  // false: skips DNS lookup, disables "External" address
         minify: false, // do not minify JavaScript
         logLevel: 'info',
         logConnections: true,
@@ -22,5 +22,5 @@ module.exports = {
             logPrefix: '<%= package.name %>' + ' @ v' + '<%= package.version %>' + ' (env: development)'
         }
     }
-        
+
 };
