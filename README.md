@@ -12,7 +12,7 @@
 
 <p align="center">
     <a href="https://travis-ci.org/platframe/platframe"><img src="https://travis-ci.org/platframe/platframe.svg?branch=master"></a>
-    <a href="https://www.bithound.io/github/platframe/platframe"><img src="https://www.bithound.io/github/platframe/platframe/badges/score.svg"></a>
+    <a href="https://www.codacy.com/app/platframe/platframe?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=platframe/platframe&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/e2faa208e2b94932b4612df9cf306bd5"/></a>
     <a href="https://david-dm.org/platframe/platframe?type=dev"><img src="https://david-dm.org/platframe/platframe/dev-status.svg"></a>
     <a href="https://gitter.im/platframe"><img src="https://badges.gitter.im/platframe.png"></a>
 </p>

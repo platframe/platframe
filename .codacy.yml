@@ -1,0 +1,3 @@
+exclude_paths:
+  - 'config/**'
+  - Gruntfile.js
