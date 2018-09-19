@@ -1,5 +1,5 @@
 # avoid duplicate builds
-if: tag NOT present
+if: tag IS NOT present
 
 # safelist
 branches:
