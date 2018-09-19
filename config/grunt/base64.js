@@ -5,7 +5,7 @@ module.exports = {
             {
                 expand: true,
                 cwd: '<%= src_img %>/inline/',
-                src: ['**/*.png'],
+                src: ['**/*.{png,jpg,jpeg,gif,webp}'],
                 dest: '<%= dev_img %>/inline/',
                 ext: '.b64',
                 extDot: 'last'
@@ -13,7 +13,7 @@ module.exports = {
             {
                 expand: true,
                 cwd: '<%= src_cmp %>',
-                src: ['**/images/inline/*.png'],
+                src: ['**/images/inline/*.{png,jpg,jpeg,gif,webp}'],
                 dest: '<%= dev_img %>/inline/',
                 ext: '.b64',
                 extDot: 'last'

@@ -4,11 +4,13 @@
 ol, ul
     margin: rem(25px) 0
     padding: 0 0 0 rem(33px)
-    list-style-position: outside
-    & li
+    list-style-position: inside
+    li
         color: _list
         margin: rem(8px) 0
         line-height: 1.5
+        a
+            font-weight: inherit
 
 ol
     list-style-type: decimal
@@ -16,13 +18,12 @@ ol
 ul
     list-style-type: square
 
-//  definition
+//  description
 dl
     &.inline
         dt
             display: inline-block
             margin: rem(5px) 0
-            font-weight: bold
             &::after
                 content: ':\00A0'
         dd

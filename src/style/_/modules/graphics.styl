@@ -1,5 +1,5 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  VECTOR  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Vector defaults.                                                   ┃
+┃ Vector defaults.                                                        ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 svg
@@ -11,8 +11,14 @@ header svg
 footer svg
     fill: _f_v
 
+// hide embedded SVG sprites
+.svg-sprite-inline
+    position: absolute
+    visibility: hidden
+    z-index: -1
+
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  GENERAL  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Rules pertaining to all image types.                               ┃
+┃ Rules pertaining to all image types.                                    ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 // ensure containment within fluid grid

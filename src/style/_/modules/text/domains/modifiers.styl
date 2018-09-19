@@ -1,36 +1,60 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━  MODIFIERS  ━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-// alternate voice
-i
-    font-style: italic
-
 // stylistically different
 b
     font-weight: bold
 
-u
-    text-decoration: underline
+// define long quotations
+blockquote
+    font-family: $serif
+    font-style: italic
+
+// deleted text
+del
+    text-decoration: line-through
+
+// indicate the term being defined
+dfn
+    font-style: italic
+
+// description list data
+dd
+    font-weight: normal
+
+// description list term
+dt
+    font-weight: bold
 
 // stress emphasis
 em
     font-style: italic
     padding-right: 0.12em
 
-// strong importance
-strong
-    font-weight: bold
+// legend describing a figure
+figcaption
+    font-style: italic
+    text-align: center
 
 // highlight relevance
 mark
     background: #F7F3E1
 
+// alternate voice
+i
+    font-style: italic
+    font-weight: inherit
+
 // additions
 ins
     text-decoration: underline
 
-// deleted text
-del
-    text-decoration: line-through
+// short inline quotation
+q, blockquote
+    quotes: "“" "”" "‘" "’"
+    &::before
+        content: open-quote
+    &::after
+        content: close-quote
 
 // lost relevance / accuracy
 s
@@ -39,6 +63,10 @@ s
 // small print
 small
     font-size: 80%
+
+// strong importance
+strong
+    font-weight: bold
 
 // subscript, superscript
 sub, sup
@@ -52,3 +80,6 @@ sup
 
 sub
     bottom: -0.25em
+
+u
+    text-decoration: underline

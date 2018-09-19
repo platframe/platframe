@@ -12,6 +12,7 @@ var path = require('path'),
         { removeViewBox:              false }, // remove viewBox attribute
         { removeTitle:                false }, // remove <title>
         { mergePaths:                 false }, // merge multiple paths into one
+        { convertStyleToAttrs:        false }, // convert styles into attributes
         { moveGroupAttrsToElems:      false }, // move some group attributes to the content elements
         { convertShapeToPath:		  false }, // convert some basic shapes to path
         { removeDimensions:           false }, // remove WxH (required for IE 9 & 10, progressive enhancement)

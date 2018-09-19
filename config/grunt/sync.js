@@ -12,19 +12,27 @@ module.exports = {
                 dest: '<%= dev_log %>',
                 extDot: 'last'
             },
-            // linked bitmaps
+            // inline images
+            {
+                expand: true,
+                cwd: '<%= src_img %>/inline/',
+                src: ['**/*.{jpg,jpeg,gif,webp}', '**/verbatim/**/*.svg'],
+                dest: '<%= dev_img %>/inline/',
+                extDot: 'last'
+            },
+            // linked images
             {
                 expand: true,
                 cwd: '<%= src_img %>/linked/',
-                src: ['**/*.{jpg,jpeg,gif,webp}'],
+                src: ['**/*.{jpg,jpeg,gif,webp}', '**/verbatim/**/*.svg'],
                 dest: '<%= dev_img %>/linked/',
                 extDot: 'last'
             },
-            // linked bitmaps in components
+            // linked images in components
             {
                 expand: true,
                 cwd: '<%= src_cmp %>',
-                src: ['**/images/linked/*.{jpg,jpeg,gif,webp}'],
+                src: ['**/images/linked/*.{jpg,jpeg,gif,webp}', '**/images/linked/verbatim/**/*.svg'],
                 dest: '<%= dev_img %>/linked/',
                 extDot: 'last'
             },
@@ -51,19 +59,27 @@ module.exports = {
                 dest: '<%= prod_log %>',
                 extDot: 'last'
             },
-            // linked bitmaps
+            // inline images
+            {
+                expand: true,
+                cwd: '<%= src_img %>/inline/',
+                src: ['**/*.{jpg,jpeg,gif,webp}', '**/verbatim/**/*.svg'],
+                dest: '<%= prod_img %>/inline/',
+                extDot: 'last'
+            },
+            // linked images
             {
                 expand: true,
                 cwd: '<%= src_img %>/linked/',
-                src: ['**/*.{jpg,jpeg,gif,webp}'],
+                src: ['**/*.{jpg,jpeg,gif,webp,svg}'],
                 dest: '<%= prod_img %>/linked/',
                 extDot: 'last'
             },
-            // linked bitmaps in components
+            // linked images in components
             {
                 expand: true,
                 cwd: '<%= src_cmp %>',
-                src: ['**/images/linked/*.{jpg,jpeg,gif,webp}'],
+                src: ['**/images/linked/*.{jpg,jpeg,gif,webp,svg}'],
                 dest: '<%= prod_img %>/linked/',
                 extDot: 'last'
             }
