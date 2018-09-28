@@ -8,7 +8,7 @@ module.exports = {
     },
     compress: {
         files: {
-            '<%= prod_log %>js/root.js': ['<%= rollup.files.dest %>']
+            '<%= prd_log %>js/root.js': ['<%= rollup.files.dest %>']
         }
     }
 

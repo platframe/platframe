@@ -49,14 +49,14 @@ module.exports = {
         updateAndDelete: false // remove files from dest that are not in src
     },
 
-    prod: {
+    prd: {
         files: [
             // logic
             {
                 expand: true,
                 cwd: '<%= src_log %>',
                 src: ['**/*.{py,rb,php*}'],
-                dest: '<%= prod_log %>',
+                dest: '<%= prd_log %>',
                 extDot: 'last'
             },
             // inline images
@@ -64,7 +64,7 @@ module.exports = {
                 expand: true,
                 cwd: '<%= src_img %>/inline/',
                 src: ['**/*.{jpg,jpeg,gif,webp}', '**/verbatim/**/*.svg'],
-                dest: '<%= prod_img %>/inline/',
+                dest: '<%= prd_img %>/inline/',
                 extDot: 'last'
             },
             // linked images
@@ -72,7 +72,7 @@ module.exports = {
                 expand: true,
                 cwd: '<%= src_img %>/linked/',
                 src: ['**/*.{jpg,jpeg,gif,webp,svg}'],
-                dest: '<%= prod_img %>/linked/',
+                dest: '<%= prd_img %>/linked/',
                 extDot: 'last'
             },
             // linked images in components
@@ -80,7 +80,7 @@ module.exports = {
                 expand: true,
                 cwd: '<%= src_cmp %>',
                 src: ['**/images/linked/*.{jpg,jpeg,gif,webp,svg}'],
-                dest: '<%= prod_img %>/linked/',
+                dest: '<%= prd_img %>/linked/',
                 extDot: 'last'
             }
         ]

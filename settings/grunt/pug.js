@@ -21,12 +21,12 @@ module.exports = {
         }]
     },
 
-    prod: {
+    prd: {
         files: [{
             expand: true,
             cwd: '<%= src_htm %>views',
             src: [ '**/!(_)*.pug', '!**/_/**'], // exclude partials
-            dest: '<%= prod_htm %>',
+            dest: '<%= prd_htm %>',
             ext: '.html'
         }]
     }

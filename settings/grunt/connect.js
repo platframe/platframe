@@ -14,7 +14,7 @@ module.exports = {
     },
     all: {
         options: {
-            base: '<%= prod %>'
+            base: '<%= prd %>'
         }
     }
 

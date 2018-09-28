@@ -2,9 +2,9 @@ default:
   description: |
     'Provision for development'
   tasks:
-    - 'develop'
+    - 'development'
 
-develop:
+development:
   description: |
     'Provision for development'
   tasks:
@@ -22,18 +22,18 @@ develop:
     - 'notify'
     - 'watch'
 
-build:
+production:
   description: |
     'Provision for deployment'
   tasks:
     - 'test'
     - 'clean'
-    - 'pug:prod'
-    - 'stylus:prod'
-    - 'postcss:prod'
+    - 'pug:prd'
+    - 'stylus:prd'
+    - 'postcss:prd'
     - 'rollup'
     - 'uglify'
-    - 'sync:prod'
+    - 'sync:prd'
     - 'svg_sprite'
     - 'pngmin'
     - 'base64'
@@ -49,11 +49,11 @@ preflight:
     'Verify the build'
   tasks:
     - 'test'
-    - 'build'
+    - 'production'
     - 'serve'
 
 deploy:
   description: |
     'Deploy to production'
   tasks:
-    - 'build'
+    - 'production'

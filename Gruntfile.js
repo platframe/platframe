@@ -5,37 +5,37 @@ module.exports = function(grunt) {
 
     var env, dest,
 
-        // environment root dir names
+        // roots
         dev  = 'dev',
-        prod = 'prod',
-        conf = 'config',
+        prd  = 'prd',
+        conf = 'settings',
         root = process.cwd(),
 
         // get task name
         task = grunt.cli.tasks[0];
-
+        
     // establish environment intent from target or task, defaults to: grunt --env=dev
-    if (grunt.option && (grunt.option('env') === 'dev' || grunt.option('env') === 'prod')) {
+    if (grunt.option && (grunt.option('env') === 'development' || grunt.option('env') === 'production')) {
         env = grunt.option('env');
     } else {
         switch (task) {
-        case 'develop':
+        case 'development':
             env = 'dev';
             break;
         case 'test':
-            env = 'prod';
+            env = 'prd';
             break;
-        case 'build':
-            env = 'prod';
+        case 'production':
+            env = 'prd';
             break;
         case 'serve':
-            env = 'prod';
+            env = 'prd';
             break;
         case 'preflight':
-            env = 'prod';
+            env = 'prd';
             break;
         case 'deploy':
-            env = 'prod';
+            env = 'prd';
             break;
         default:
             env = 'dev';
@@ -46,11 +46,11 @@ module.exports = function(grunt) {
     dest = env;
 
     // adapt dynamic dest for modified roots
-    if (dev !== 'dev' || prod !== 'prod') {
-        if (env === 'dev') {
+    if (dev !== 'dev' || prd !== 'prd') {
+        if (env === 'development') {
             dest = dev;
-        } else if (env === 'prod') {
-            dest = prod;
+        } else if (env === 'production') {
+            dest = prd;
         }
     }
 
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         // pass data to task configs
         data: {
 
-            env: env, // current environment
+            env, // current environment
 
             /* define root paths */
 
@@ -78,19 +78,19 @@ module.exports = function(grunt) {
             src_fnt: '<%= src %>/fonts/',
             src_cmp: '<%= src %>/components/',
 
-            dev: dev, // development
+            dev, // development
             dev_log: '<%= dev %>/assets/logic/',
             dev_htm: '<%= dev %>/',
             dev_css: '<%= dev %>/assets/style/',
             dev_img: '<%= dev %>/assets/images/',
             dev_fnt: '<%= dev %>/assets/fonts/',
 
-            prod: prod, // production
-            prod_log: '<%= prod %>/assets/logic/',
-            prod_htm: '<%= prod %>/',
-            prod_css: '<%= prod %>/assets/style/',
-            prod_img: '<%= prod %>/assets/images/',
-            prod_fnt: '<%= prod %>/assets/fonts/'
+            prd, // production
+            prd_log: '<%= prd %>/assets/logic/',
+            prd_htm: '<%= prd %>/',
+            prd_css: '<%= prd %>/assets/style/',
+            prd_img: '<%= prd %>/assets/images/',
+            prd_fnt: '<%= prd %>/assets/fonts/'
 
         }
 

@@ -13,7 +13,7 @@ module.exports = {
             '<%= dev_css %>root.css': '<%= dev_css %>root.css'
         }
     },
-    prod: {
+    prd: {
         options: {
             processors: [
                 require('autoprefixer'),
@@ -23,7 +23,7 @@ module.exports = {
             ]
         },
         files: {
-            '<%= prod_css %>root.css': '<%= prod_css %>root.css'
+            '<%= prd_css %>root.css': '<%= prd_css %>root.css'
         }
     }
 

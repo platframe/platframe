@@ -15,12 +15,12 @@ module.exports = {
         }
     },
     
-    prod: {
+    prd: {
         options: {
             banner: '/*! <%= package.name %> | v<%= package.version %> | Build: <%= grunt.template.date("ddd mmm dd yyyy \'at\' HH:MM:ss \'(\'o \'UTC)\'") %> | License: <%= package.license %> | \u{00A9} <%= grunt.template.date("yyyy") %> <%= package.author %> */'
         },
         files: {
-            '<%= prod_css %>root.css': ['<%= src_css %>root.styl']
+            '<%= prd_css %>root.css': ['<%= src_css %>root.styl']
         }
     }
 

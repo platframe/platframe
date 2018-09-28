@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "start": "grunt",
-    "develop": "grunt develop",
-    "test": "grunt test",
-    "build": "grunt build",
-    "serve": "grunt serve",
-    "preflight": "grunt preflight",
-    "deploy": "grunt deploy"
+    "development": "grunt development",
+    "production": "NODE_ENV=production grunt production",
+    "test": "NODE_ENV=production grunt test",
+    "serve": "NODE_ENV=production grunt serve",
+    "preflight": "NODE_ENV=production grunt preflight",
+    "deploy": "NODE_ENV=production grunt deploy"
   },
   "repository": {
     "type": "git",
