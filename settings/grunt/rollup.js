@@ -11,7 +11,7 @@ module.exports = {
 
     options: {
         format: 'iife',
-        sourceMap: production ? false : true,
+        sourceMap: production ? false : 'inline',
         plugins: [
             resolve(),
             include({

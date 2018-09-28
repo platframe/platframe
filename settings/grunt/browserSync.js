@@ -7,7 +7,6 @@ module.exports = {
         },
         notify: false,
         online: true,  // false: skips DNS lookup, disables "External" address
-        minify: false, // do not minify JavaScript
         logLevel: 'info',
         logConnections: true,
         reloadOnRestart: true,
