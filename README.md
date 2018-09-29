@@ -25,7 +25,7 @@
 - [Contributing](#contributing)
 
 ## Overview
-Platframe is a structured and modular frontend framework suitable for both single and multi-page applications.
+Platframe is a structured and modular frontend development platform suitable for building both multi (MPA) and single page applications (SPA) that are backend agnostic.
 
 ### Purpose
 To provide a sound development platform with constructs that enhance developer efficiency and tooling that supports the frontend workflow.
@@ -74,31 +74,43 @@ The only prerequisite is that the chosen stack should have sufficient feature pa
 
 ## Getting started
 
-### Get the source
-- Option 1: [download the latest release](https://github.com/platframe/platframe/archive/v1.0.0.zip)
-- Option 2: clone the repo: `git clone https://github.com/platframe/platframe.git project`
+### 0. Prerequisites
 
-### Install &amp; customize
-1. Ensure that you have [Node.js](https://nodejs.org) and NPM or [Yarn](https://yarnpkg.com) on your machine
-2. In the root of your project, run `yarn` or `npm install`
-3. Change the default metadata in `package.json` to reflect your project
+- **Node.js**&nbsp; `≥ v8.0`
+- **NPM**&nbsp; `≥ v5.2`
+
+### 1. Get the source
+
+- Option 1: `npx degit github:platframe/platframe new-project`
+- Option 2: [download](https://github.com/platframe/platframe/releases/latest) the latest release
+
+### 2. Install &amp; customize
+
+At a minimum, install only the dependencies.
+- `cd new-project && npm install` 
+
+Alternatively, setup your VCS as part of the installation run.
+- `cd new-project && git init && yarn` 
+
+Change the default metadata in `package.json` to reflect your project.  
+Optionally add a `README.md`
 
 ### Develop
-Spin up the development environment by running `grunt develop`  
+Spin up the development environment by running `npm run development`  
 By default, the *dev* server runs at `localhost:3003`  
 The build system takes care of transpiling modified sources and triggering client updates
 
 ### Test
-Run your test suit\* with `grunt test`  
-Build, test and serve a production build for inspection with `grunt preflight`  
-To simply deploy a previous build locally for inspection, run `grunt serve`  
+Run your test suit\* with `npm test`  
+Build, test and serve a production build for inspection with `npm run preflight`  
+To simply deploy a previous build locally for inspection, run `npm run serve`  
 By default, the *prod* server runs at `localhost:3030`  
 
 \* Currently, only linting for JavaScript is wired to the test task. You are responsible for integrating additional testing mechanisms as required.
 
 ### Deploy
-For an optimized, production-targeted build, run `grunt build`  
-You can optionally wire your deployment logic to `grunt deploy`
+For an optimized, production-targeted build, run `npm run production`  
+You can optionally wire your deployment logic to `npm run deploy`
 
 ## Documentation
 The documentation can be found at [platframe.com/docs](http://platframe.com/docs)
