@@ -81,7 +81,7 @@ The only prerequisite is that the chosen stack should have sufficient feature pa
 
 ### 1. Get the source
 
-- Option 1: `npx degit github:platframe/platframe new-project`
+- Option 1: `npx degit platframe/new my-app`
 - Option 2: [download](https://github.com/platframe/platframe/releases/latest) the latest release
 
 ### 2. Install &amp; customize
