@@ -9,8 +9,17 @@ ol, ul
         color: _list
         margin: rem(8px) 0
         line-height: 1.5
+        nav &
+            color: _nav
+        footer &
+            color: _footer
         a
             font-weight: inherit
+    nav &
+    footer &
+        margin: 0
+        padding: 0
+        list-style-type: none
 
 ol
     list-style-type: decimal
@@ -18,7 +27,7 @@ ol
 ul
     list-style-type: square
 
-//  description
+//  descriptions
 dl
     &.inline
         dt
@@ -28,7 +37,7 @@ dl
                 content: ':\00A0'
         dd
             display: inline-block
-    // <dd> delimitation options
+    // <dd> delimitation
     .comma
         dd:not(:last-of-type)::after
             content: ',\00A0'

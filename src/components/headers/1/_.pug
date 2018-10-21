@@ -3,7 +3,9 @@
     fragment from a view-based sprite, referenced from an img tag if it is to be rendered correctly.
 
 mixin header-1(url, icon, h1, navigation, hook)
-    header(class=hook ? "header-1 " + hook :  "header-1")
+    header(
+        class=hook ? "header-1 " + hook :  "header-1"
+        role="banner")
 
         div
             h1

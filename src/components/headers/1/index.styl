@@ -3,24 +3,23 @@ header-1(scheme = __default)
         display: flex
         position: fixed
         width: 100vw
-        height: 90px
+        min-width: h_x_min
+        height: h_y
         justify-content: center
         align-items: center
-        min-width: 200px
         color: scheme.header.default
         z-index: 2
-        div // inherit size from .content
-            width: 90%
+        div
+            width: h_x
             display: flex
             flex-wrap: wrap
-            min-width: 251px
             justify-content: space-between
             +min(2)
-                width: 70%
-                min-width: 900px
+                width: h_x_b2
+                min-width: h_x_b2_min
             +min(3)
-                width: 63%
-                min-width: 1200px
+                width: h_x_b3
+                min-width: h_x_b3_min
             h1
                 display: flex
                 margin: 0

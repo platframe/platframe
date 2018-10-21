@@ -11,8 +11,8 @@ head
     title= pageTitle || "Default Title"
     
     block links
-        - if (env === 'prod')
-            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700")
+        - if (env === 'prd')
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700")
         link(rel="stylesheet" href="/assets/style/root.css")
         link(rel="icon" href="/assets/images/linked/favicon.png")
 
