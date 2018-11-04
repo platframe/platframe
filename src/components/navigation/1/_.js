@@ -11,8 +11,8 @@ export default function() {
         for (let trigger of triggers) {
 
             // determine the intended destination
-            let destination = (trigger.attributes['data-go'].value === 'next')
-                ? (trigger.parentNode.nextElementSibling)
+            let destination = trigger.attributes['data-go'].value === 'next'
+                ? trigger.parentNode.nextElementSibling
                 : context;
 
             trigger.addEventListener('click', function(event) {
@@ -24,8 +24,7 @@ export default function() {
 
                 } else {
 
-                    destination = destination.offsetTop;
-                    scroll(destination, duration);
+                    scroll(destination.offsetTop, duration);
 
                 }
                 event.stopPropagation;

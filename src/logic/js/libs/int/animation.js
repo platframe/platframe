@@ -7,20 +7,21 @@ import { smoothstep } from 'math';
 // smooth scrolling effect
 function scroll(destination, duration) {
 
-    let currentPosition = document.documentElement.scrollTop,
+    let currentPosition = window.pageYOffset,
         distanceToGo = destination - currentPosition,
         timeStart = Date.now(),
         timeEnd = timeStart + duration;
 
     // initiate scroller
     !function scroller() {
-        // incrementally set the new scrollTop
+        // incrementally set the new vertical offset
         const now = Date.now(),
             // get the estimated next point on path
             nextPoint = smoothstep(timeStart, timeEnd, now),
-            // calculate new scrollTop value
+            // calculate the eased distance increment
             newScrollTop = Math.round(currentPosition + (distanceToGo * nextPoint));
-        document.documentElement.scrollTop = newScrollTop;
+        // scroll along the y-axis
+        window.scroll(0, newScrollTop);
         // check if we're done
         if (now >= timeEnd) return;
         // schedule next move
