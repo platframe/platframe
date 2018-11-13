@@ -10,6 +10,9 @@ node_modules/
 
 ### 3RD PARTY
 
+# VS Code
+.vscode/
+
 # JetBrains
 .idea/
 *.iml

@@ -20,10 +20,12 @@ header-2(scheme = __default)
                 padding-bottom: rem(15px)
             +min(2)
                 padding: 0 rem(50px)
+                align-items: center
                 justify-content: space-between
+                align-items: center
             +min(3)
-                width: h_x_b3
-                min-width: h_x_b3_min
+                width: content_width_b3
+                min-width: content_width_b3_min
                 padding: 0
             h1
                 display: flex
@@ -32,7 +34,8 @@ header-2(scheme = __default)
                 font-weight: 600
                 align-items: center
                 letter-spacing: normal
-                margin-bottom: 0
+                color: scheme.header.default
+                margin: 0
                 padding: rem(20px) 0
                 justify-content: center
                 +min(1)
@@ -44,10 +47,12 @@ header-2(scheme = __default)
                 a
                     display: flex
                     align-items: center
+                    transition: color 200ms
                     svg
                         width: 24px
                         height: 24px
                         margin: -1px 8px 0 0
+                        transition: fill 200ms
                         +min(1)
                             width: 20px
                             height: 20px
@@ -83,6 +88,7 @@ header-2(scheme = __default)
                             font-size: .95rem
                             font-weight: 400
                             text-transform: lowercase
+                            transition: color 200ms
         .peripheral
             width: inherit
             padding: 0 rem(50px)

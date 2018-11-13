@@ -3,23 +3,25 @@ header-1(scheme = __default)
         display: flex
         position: fixed
         width: 100vw
-        min-width: h_x_min
-        height: h_y
+        height: header_height
         justify-content: center
         align-items: center
+        min-width: header_width_min
         color: scheme.header.default
+        background: transparent
         z-index: 2
-        div
-            width: h_x
+        div // inherit size from .content
             display: flex
             flex-wrap: wrap
+            width: content_width
+            min-width: content_width_min
             justify-content: space-between
             +min(2)
-                width: h_x_b2
-                min-width: h_x_b2_min
+                width: content_width_b2
+                min-width: content_width_b2_min
             +min(3)
-                width: h_x_b3
-                min-width: h_x_b3_min
+                width: content_width_b3
+                min-width: content_width_b3_min
             h1
                 display: flex
                 margin: 0

@@ -1,20 +1,20 @@
 head
 
     meta(charset="utf-8")
-    
+
     block description
         meta(name="description" content="Describe the document.")
-    
+
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=0.5")
     meta(name="generator" content="Platframe")
 
     title= pageTitle || "Default Title"
-    
+
     block links
         - if (env === 'prd')
             link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700")
-        link(rel="stylesheet" href="/assets/style/root.css")
-        link(rel="icon" href="/assets/images/linked/favicon.png")
+        link(rel="stylesheet" href=`/assets/styles/root.css?v=${ TIME }`)
+        link(rel="icon" href="/assets/images/global/_link/favicon.png")
 
     block scripts
-        script(defer src="/assets/logic/js/root.js")
+        script(defer src=`/assets/logic/js/root.js?v=${ TIME }`)

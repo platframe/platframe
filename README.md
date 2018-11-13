@@ -1,22 +1,31 @@
 <p align="center">
     <a href="http://platframe.com">
-        <img src="http://platframe.com/assets/images/linked/platframe.svg" width=100 height=100>
+        <img src="http://platframe.com/assets/images/external/_link/platframe.svg" width=100 height=100>
     </a>
 </p>
 
 <h1 align="center">Platframe</h1>
 
 <p align="center">
-    Modular framework for structured and scalable frontend development.
+    Modular platform for structured and scalable frontend development.
 </p>
 
 <p align="center">
     <a href="https://travis-ci.org/platframe/platframe"><img src="https://travis-ci.org/platframe/platframe.svg?branch=master"></a>
     <a href="https://www.codacy.com/app/platframe/platframe?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=platframe/platframe&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/e2faa208e2b94932b4612df9cf306bd5"/></a>
     <a href="https://david-dm.org/platframe/platframe?type=dev"><img src="https://david-dm.org/platframe/platframe/dev-status.svg"></a>
-    <a href="https://gitter.im/platframe"><img src="https://badges.gitter.im/platframe.png"></a>
+    <a href="http://t.me/platframe"><img src="https://img.shields.io/badge/telegram-chat-30A7DE.svg"></a>
 </p>
-<br>
+
+<p align="center">
+    TL;DR: Hit this button and go build something awesome.
+</p>
+
+<p align="center">
+    <a href="https://app.netlify.com/start/deploy?repository=https://github.com/platframe/platframe">
+        <img src="https://www.netlify.com/img/deploy/button.svg" alt="Take Platframe for a spin on Netlify">
+    </a>
+</p>
 
 ## Table of contents
 - [Overview](#overview)
@@ -53,8 +62,8 @@ Beyond the scope of its core functions, Platframe may also be used as a static s
 
 #### Generator
 Using the framework as a static site generator lends its core benefits to your project, regardless of size.
-This facilitates projects with less complex requirements. 
-Put the platform in development mode to start adding content and optionally customize the default template. 
+This facilitates projects with less complex requirements.
+Put the platform in development mode to start adding content and optionally customize the default template.
 Refer to [Getting started](#getting-started).
 
 #### Blueprint
@@ -68,7 +77,7 @@ Here's an outline of how your project could benefit:
 - A modular design that keeps your code <abbr title="don't repeat yourself">DRY</abbr>
 - Reduce or eliminate dev time spent on architectural decisions
 
-Refer to the section on [architecture](http://platframe.com/docs/#architecture) in the docs for more detail.
+Refer to the section on [architecture](https://platframe.com/docs/#architecture) in the docs for more detail.
 When using Platframe solely as a blueprint for structuring a new frontend, it becomes largely stack-agnostic.
 The only prerequisite is that the chosen stack should have sufficient feature parity with the respective language features of *Pug*, *Stylus* and JavaScript employed by the framework in order to  abide by the requirements of the architecture.
 
@@ -87,33 +96,33 @@ The only prerequisite is that the chosen stack should have sufficient feature pa
 ### 2. Install &amp; customize
 
 At a minimum, install only the dependencies.
-- `cd new-project && npm install` 
+- `cd new-project && npm install`
 
 Alternatively, setup your VCS as part of the installation run.
-- `cd new-project && git init && yarn` 
+- `cd new-project && git init && yarn`
 
-Change the default metadata in `package.json` to reflect your project.  
+Change the default metadata in `package.json` to reflect your project.
 Optionally add a `README.md`
 
 ### Develop
-Spin up the development environment by running `npm run development`  
-By default, the *dev* server runs at `localhost:3003`  
+Spin up the development environment by running `npm run development`
+By default, the *dev* server runs at `localhost:3003`
 The build system takes care of transpiling modified sources and triggering client updates
 
 ### Test
-Run your test suit\* with `npm test`  
-Build, test and serve a production build for inspection with `npm run preflight`  
-To simply deploy a previous build locally for inspection, run `npm run serve`  
-By default, the *prod* server runs at `localhost:3030`  
+Run your test suit\* with `npm test`
+Build, test and serve a production build for inspection with `npm run preflight`
+To simply deploy a previous build locally for inspection, run `npm run serve`
+By default, the *prod* server runs at `localhost:3030`
 
 \* Currently, only linting for JavaScript is wired to the test task. You are responsible for integrating additional testing mechanisms as required.
 
 ### Deploy
-For an optimized, production-targeted build, run `npm run production`  
+For an optimized, production-targeted build, run `npm run production`
 You can optionally wire your deployment logic to `npm run deploy`
 
 ## Documentation
-The documentation can be found at [platframe.com/docs](http://platframe.com/docs)
+The documentation can be found at [platframe.com/docs](https://platframe.com/docs)
 
 ## Contributing
 Refer to the contribution [guidelines](.github/CONTRIBUTING.md) on how to get started.
@@ -121,6 +130,6 @@ Refer to the contribution [guidelines](.github/CONTRIBUTING.md) on how to get st
 ---
 
 ## Meta
-&#169; 2018 [Cygnul](http://cygnul.com). 
-Authored by [@gidhon](https://github.com/gidhon). 
+&#169; 2018 [Cygnul](https://cygnul.com).
+Authored by [@gidhon](https://github.com/gidhon).
 Released under the [MIT](LICENSE) license.

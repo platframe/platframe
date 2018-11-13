@@ -1,0 +1,48 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ANCHORS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// general
+a
+    text-decoration: none
+    &:link    { color: _link; text-decoration: none; svg { fill: @color } }
+    &:visited { outline: none; color: _visited; svg { fill: @color } }
+    &:hover   { color: _hover;                  svg { fill: @color } }
+    &:focus   { color: _focus;                  svg { fill: @color } }
+    &:active  { outline: none; color: _active;  svg { fill: @color } }
+
+    // paragraphs
+    p &
+        color: _link
+        font-weight: inherit
+        &:hover
+            text-decoration: underline
+            svg { fill: @color }
+
+    // navigation
+    nav &, .nav &
+        button &
+            text-decoration: none
+            &:link    { color: _nav_link;           svg { fill: @color } }
+            &:visited { color: _nav_visited;        svg { fill: @color } }
+            &:hover   { color: _nav_hover;          svg { fill: @color } }
+            &:focus   { color: _nav_focus;          svg { fill: @color } }
+            &:active  { color: _nav_active;         svg { fill: @color } }
+
+    // headers
+    header &
+        &:link    { color: _header_link;            svg { fill: @color } }
+        &:visited { color: _header_visited;         svg { fill: @color } }
+        &:hover   { color: _header_hover;           svg { fill: @color } }
+        &:focus   { color: _header_focus;           svg { fill: @color } }
+        &:active  { color: _header_active;          svg { fill: @color } }
+
+    // footers
+    footer &
+        transition: color 150ms
+        &:link    { color: _footer_link;            svg { fill: @color } }
+        &:visited { color: _footer_visited;         svg { fill: @color } }
+        &:hover
+            color: _footer_hover
+            text-decoration: none
+            svg { fill: @color }
+        &:focus   { color: _footer_focus;           svg { fill: @color } }
+        &:active  { color: _footer_active;          svg { fill: @color } }

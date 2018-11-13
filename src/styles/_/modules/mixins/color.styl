@@ -1,0 +1,82 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  SCHEMES  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+schemer(scheme)
+    // Specify a new color scheme with which to override the currently active one on a local level.
+    message = ''
+    name = unquote(scheme.name)
+    // safeguard for scheme ident passed as string literal
+    scheme = (scheme is a 'string') ? lookup(scheme): scheme
+    // define the minimum scheme vocabulary
+    coverage = default heading paragraph list vector border background link visited hover active focus
+    // manage scope targets
+    scopes = nav header footer
+    // ensure that chosen scheme satisfies required coverage
+    for target in coverage
+        unless target in scheme
+            message += s('"%s" was passed to color-scheme() but is incomplete: "%s" is missing.', name, element)
+            error(message)
+    &
+        *
+            border-color: scheme.border // borders
+        body&, main // default text
+            color: scheme.default
+            background: scheme.background
+        header
+            color: scheme.header.default
+            background: scheme.header.background
+        h1, h2, h3, h4, h5, h6
+            color: scheme.heading
+        p
+            color: scheme.paragraph
+        li
+            color: scheme.list
+        code
+            color: scheme.code
+        footer
+            color: scheme.footer.default
+            background: scheme.footer.background
+        svg
+            fill: scheme.vector
+        a // general links; allow embedded SVG to sync
+            color: scheme.link; svg { fill: @color }
+            &:visited
+                color: scheme.visited; svg { fill: @color }
+            &:hover
+                color: scheme.hover; svg { fill: @color }
+            &:active
+                color: scheme.active; svg { fill: @color }
+            &:focus
+                color: scheme.focus; svg { fill: @color }
+        for scope in scopes
+            { scope } a // links nested in scopes
+                color: scheme[scope].link; svg { fill: @color }
+                &:visited
+                    color: scheme[scope].visited; svg { fill: @color }
+                &:hover
+                    color: scheme[scope].hover; svg { fill: @color }
+                &:active
+                    color: scheme[scope].active; svg { fill: @color }
+                &:focus
+                    color: scheme[scope].focus; svg { fill: @color }
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ELEMENTS  ━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+anchors(scheme = __default, target = anchor)
+    // Override the anchor values of current active color scheme with another.
+    scheme = (scheme is a 'string') ? lookup(scheme): scheme
+    scopes = nav header footer
+    if target is not anchor and target in scopes
+        target = scheme[target]
+    else
+        target = scheme
+    a
+        &:link
+            color: target.link;    svg { fill: @color }
+        &:visited
+            color: target.visited; svg { fill: @color }
+        &:hover
+            color: target.hover;   svg { fill: @color }
+        &:focus
+            color: target.focus;   svg { fill: @color }
+        &:active
+            color: target.active;  svg { fill: @color }

@@ -1,0 +1,20 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  MODULES  ━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Modules contain the project's default styles and are sourced in an ┃
+┃ order sensitive to their dependants and the cascade.               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+active_modules = 'equalize' \
+                 'mixins'   \
+                 'media'    \
+                 'color'    \
+                 'text'     \
+                 'globals'  \
+                 'layout'   \
+                 'graphics' \
+                 'forms'    \
+                 'tables'   \
+                 'cache'    \
+                 'icons'
+
+for module in active_modules
+    @require module

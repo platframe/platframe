@@ -3,20 +3,18 @@
     fragment from a view-based sprite, referenced from an img tag if it is to be rendered correctly.
 
 mixin header-1(url, icon, h1, navigation, hook)
-    header(
-        class=hook ? "header-1 " + hook :  "header-1"
-        role="banner")
+    header(class=hook ? "header-1 " + hook :  "header-1")
 
         div
             h1
                 a(href=url)
-                    svg: use(xlink:href="/assets/images/sprite/symbols.svg#" + icon)
+                    svg: use(xlink:href="/assets/images/_sprites/symbols.svg#" + icon)
                     =h1
 
             nav(id="navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement")
 
                 button
-                    svg: use(xlink:href="/assets/images/sprite/symbols.svg#header-1-nav-button")
+                    svg: use(xlink:href="/assets/images/_sprites/symbols.svg#header-1-nav-button")
 
                 ul
                     for anchor in navigation

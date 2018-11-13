@@ -1,3 +1,5 @@
 exclude_paths:
-  - 'config/**'
-  - Gruntfile.js
+  - 'settings/**'
+  - .eslintrc.js
+  - babel.config.js
+  - gulpfile.babel.js

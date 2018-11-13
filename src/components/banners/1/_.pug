@@ -1,3 +1,9 @@
-mixin banner-1(url, text, hook)
+mixin banner-1(url, text, icon = false, hook)
     div(class=hook ? "banner-1 " + hook :  "banner-1")
-        a(href=url || '#')= text || 'Banner'
+        if icon
+            a(href=url || '#').icon
+                span= text || 'Banner'
+                img(src=icon inline)
+        else
+            a(href=url || '#')
+                span= text || 'Banner'

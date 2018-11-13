@@ -1,0 +1,4 @@
+# for direct deploys with the Netlify Button
+[build]
+  publish = "prd/"
+  command = "yarn deploy && rm LICENSE README.md .travis.yml .codacy.yml"

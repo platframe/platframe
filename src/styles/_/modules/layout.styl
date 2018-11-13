@@ -1,0 +1,122 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  LAYOUT  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Defaults that lend consistency to how the foundational structure   ┃
+┃ of documents are laid out.                                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+/* DIMENSIONS __________________ header ______________________________
+ * Dimensional variables correlating to the 𝘣𝘳𝘦𝘢𝘬𝘱𝘰𝘪𝘯𝘵 𝘳𝘢𝘯𝘨𝘦𝘴 in the
+ * viewport scale (see 𝘮𝘦𝘥𝘪𝘢 module). Define for base containers.    */
+
+// 0 ≤ BP ≤ 1        shorthand    value
+header_width         = h_x        = c_x
+header_width_min     = h_x_min    = c_x_min
+header_height        = h_y        = rem(80px)
+
+// 1 ≤ BP ≤ 2
+header_width_b1      = h_x_b1     = c_x_b1
+header_width_b1_min  = h_x_b1_min = c_x_b1_min
+header_height_b1     = h_y_b1     = rem(95px)
+
+// 2 ≤ BP ≤ 3
+header_width_b2      = h_x_b2     = c_x_b2
+header_width_b2_min  = h_x_b2_min = c_x_b2_min
+header_height_b2     = h_y_b2     = h_y_b1
+
+// BP ≥ 3
+header_width_b3      = h_x_b3     = c_x_b3
+header_width_b3_min  = h_x_b3_min = c_x_b3_min
+header_height_b3     = h_y_b3     = h_y_b2
+
+/* DIMENSIONS ___________________ content _________________________ */
+
+// 0 ≤ BP ≤ 1        shorthand    value
+content_width        = c_x        = 90%
+content_width_min    = c_x_min    = rem(251px)
+
+// 1 ≤ BP ≤ 2
+content_width_b1     = c_x_b1     = 80%
+content_width_b1_min = c_x_b1_min = rem(500px)
+
+// 2 ≤ BP ≤ 3
+content_width_b2     = c_x_b2     = 80%
+content_width_b2_min = c_x_b2_min = rem(900px)
+
+// BP ≥ 3
+content_width_b3     = c_x_b3     = 63%
+content_width_b3_min = c_x_b3_min = rem(1200px)
+
+/* DIMENSIONS ___________________ footer _________________________ */
+
+// 0 ≤ BP ≤ 1        shorthand    value
+footer_width         = f_x        = 90%
+footer_width_min     = f_x_min    = c_x_min
+
+// 1 ≤ BP ≤ 2
+footer_width_b1      = f_x_b1     = f_x
+footer_width_b1_min  = f_x_b1_min = c_x_b1_min
+
+// 2 ≤ BP ≤ 3
+footer_width_b2      = f_x_b2     = c_x_b2
+footer_width_b2_min  = f_x_b2_min = c_x_b2_min
+
+// BP ≥ 3
+footer_width_b3      = f_x_b3     = c_x_b3
+footer_width_b3_min  = f_x_b3_min = c_x_b3_min
+
+/* SELECTORS ___________________ native ______________________________
+ * Default structural elements.                                     */
+
+html
+    height: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+
+body
+    display: flex
+    flex-flow: column wrap
+    min-height: 100vh
+    color: _default
+    background: _background
+
+header
+    color: _header
+    background: _header_background
+
+main
+    flex: 1
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    align-content: flex-start
+
+footer
+    color: _footer
+    background: _footer_background
+
+/* SELECTORS ___________________ custom ______________________________
+ * Extended structural vocabulary with semantic identifiers.        */
+
+.canvas
+    display: flex
+    width: 100%
+    position: relative
+    flex-flow: row wrap
+    justify-content: center
+    overflow: hidden
+    +min(2)
+        min-height: 100vh
+        align-items: center
+
+.content
+    width: c_x
+    display: flex
+    flex-wrap: wrap
+    min-width: c_x_min
+    +min(1)
+        width: c_x_b1
+    +min(2)
+        width: c_x_b2
+        min-width: c_x_b2_min
+    +min(3)
+        width: c_x_b3
+        min-width: c_x_b3_min

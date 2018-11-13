@@ -1,0 +1,91 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━  MODIFIERS  ━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// stylistically different
+b
+    font-weight: bold
+
+// define long quotations
+blockquote
+    font-family: $serif
+    font-style: italic
+
+// deleted text
+del
+    text-decoration: line-through
+
+// indicate the term being defined
+dfn
+    font-style: italic
+
+// description list data
+dd
+    font-weight: normal
+
+// description list term
+dt
+    font-weight: bold
+
+// stress emphasis
+em
+    font-style: italic
+    padding-right: 0.12em
+
+// legend describing a figure
+figcaption
+    font-style: italic
+    text-align: center
+
+// highlight relevance
+mark
+    background: #F7F3E1
+
+// alternate voice
+i
+    font-style: italic
+    font-weight: inherit
+
+// additions
+ins
+    text-decoration: underline
+
+// short inline quotation
+q, blockquote
+    quotes: "“" "”" "‘" "’"
+    &::before
+        content: open-quote
+    &::after
+        content: close-quote
+
+// lost relevance / accuracy
+s
+    text-decoration: line-through
+
+// small print
+small
+    font-size: 80%
+
+// generic inline container
+span
+    a &, p &, li &
+        color: inherit
+        font-weight: inherit
+
+// strong importance
+strong
+    font-weight: bold
+
+// subscript, superscript
+sub, sup
+    font-size: 70%
+    line-height: 0
+    position: relative
+    vertical-align: baseline
+
+sup
+    top: -0.5em
+
+sub
+    bottom: -0.25em
+
+u
+    text-decoration: underline

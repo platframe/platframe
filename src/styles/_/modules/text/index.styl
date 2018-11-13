@@ -1,0 +1,16 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  TEXT  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Manage typography and textual markup domains.                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// local asset path
+source = '../fonts/'
+
+// only for local dev.
+unless ENV is 'production'
+    @require 'fonts/*'
+
+// stacks
+@require 'stacks'
+
+// text
+@require 'domains'

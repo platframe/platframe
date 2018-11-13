@@ -6,7 +6,7 @@ header-3(scheme = __default)
         min-width: h_x_min
         height: h_y
         justify-content: center
-        color: rgba(255,255,255,.55)
+        color: scheme.header.default
         background: transparent
         z-index: 3
         +min(1)
@@ -30,19 +30,25 @@ header-3(scheme = __default)
             h1
                 display: flex
                 margin: 0
+                font-size: 1.9rem
+                font-weight: 600
+                align-items: center
+                letter-spacing: normal
+                +min(1)
+                    font-size: 1.4rem
                 a
                     display: flex
+                    align-items: center
+                    transition: color 200ms
                     svg
-                        size(rem(34px))
-                        fill: _landing_black
-                        margin: 0
+                        size(rem(24px))
                         transition: fill 200ms
+                        margin: -1px rem(8px) 0 0
                         +min(1)
-                            size(rem(44px))
+                            size(rem(22px))
+                            margin: 0 rem(6px) 0 0
                         +min(2)
-                            size(rem(34px))
-                        &:hover
-                            fill: rgba(0,0,0,.4)
+                            size(rem(24px))
             nav
                 position: fixed
                 width: rem(225px)
@@ -111,7 +117,7 @@ header-3(scheme = __default)
                                     color: unset
                                     border: unset
                                 font-size: 1.15rem
-                                color: rgba(255,255,255,.45)
+                                color: scheme.nav.default
                                 margin-right: rem(18px)
                                 cursor: pointer
                             &:focus, &:hover
