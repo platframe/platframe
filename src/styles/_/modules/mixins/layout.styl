@@ -1,0 +1,107 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  UTILITIES  ━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Various convenience methods.                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+size(width, height = width)
+    width: width
+    height: height
+
+clearfloat()
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  GRID  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Use the grid for responsive, grid-based development that requires  ┃
+┃ the support of older UA's, or as an alternative layout mode until  ┃
+┃ native CSS grids enjoy sufficient support.                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// Specify grid granularity; Convenience keywords in the "keys" hash
+// is used by the "grid()" mixin and have to be changed to reflect
+// the changes made to definition. Only factors of the 'definition'
+// are used as keywords.
+
+definition = 12
+
+/*           LAYOUT REFERENCE TABLE
+╔═══════════╦═══════════╦═════════╦═══════════╗
+║ column(s) ║ width (%) ║ rounded ║  factors  ║
+╠═══════════╬═══════════╬═════════╬═══════════╣
+║         1 ║ 08.33     ║      08 ║ cols × 12 ║
+║         2 ║ 16.66     ║      17 ║ cols × 6  ║
+║         3 ║ 24.99     ║      25 ║ cols × 4  ║
+║         4 ║ 33.33     ║      33 ║ cols × 3  ║
+║         5 ║ 41.66     ║      42 ║ -         ║
+║         6 ║ 49.99     ║      50 ║ cols × 2  ║
+║         7 ║ 58.33     ║      58 ║ -         ║
+║         8 ║ 66.66     ║      67 ║ -         ║
+║         9 ║ 74.99     ║      75 ║ -         ║
+║        10 ║ 83.33     ║      83 ║ -         ║
+║        11 ║ 91.66     ║      92 ║ -         ║
+║        12 ║ 99.99     ║     100 ║ cols × 1  ║
+╚═══════════╩═══════════╩═════════╩═══════════╝
+*/
+
+keys = {
+
+    'full'    : 12,
+    'half'    : 6,
+    'third'   : 4,
+    'fourth'  : 3,
+    'sixth'   : 2,
+    'twelfth' : 1
+
+}
+// Set the default gutter width between elements. Gutter is not
+// active by default - set it to true in the grid routine. Unit of
+// measurement is not limited to pixels.
+
+interstice = 15px
+
+// Columns is the first parameter of the grid mixin (the only one
+// that is required); takes integer/convenience keyword from the
+// 'keys' dictionary. The 2nd parameter takes a boolean to activate
+// the gap in which case the left and right margins are set to half
+// the interstice.
+/*
+.example-1
+   grid(12)
+
+⯈ 1 column / parent's full width
+
+.example-2
+   grid('third', true)
+
+⯈ 3 columns and activate the gutter
+
+.example-3
+   grid(6, true, 2%)
+
+⯈ 2 columns, activate gutter, override gutter size */
+
+error_grid_key(dictionary)
+    allowed = ''
+    for key, value in dictionary
+        allowed += "'" + key + "'" + ' (*' + value + ')' + '\n'
+    return error("Unknown convenience reference supplied. \nPermissible identifiers are: \n" + allowed)
+
+grid(columns, gap = false, gutter = interstice, scope = definition)
+    if columns is a 'unit' and columns > scope
+        error("Column count exceeds the grid's definition (" + scope + " columns)")
+    if columns is a 'string'
+        if not columns in keys
+            error_grid_key(keys)
+        else if not gap
+            width: "calc(100% / %s * %s)" % (scope keys[columns])
+        else
+            width: "calc(100% / %s * %s - %s)" % (scope keys[columns] gutter)
+            margin-left: (gutter / 2)
+            margin-right: (gutter / 2)
+    else if not gap
+        width: "calc(100% / %s * %s)" % (scope columns)
+    else
+        width: "calc(100% / %s * %s - %s)" % (scope columns gutter)
+        margin-left: (gutter / 2)
+        margin-right: (gutter / 2)

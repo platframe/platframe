@@ -1,0 +1,57 @@
+// SELECTORS _________________________________⌋ native
+// Default structural elements
+
+html
+    height: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+
+body
+    display: flex
+    flex-flow: column wrap
+    min-height: 100vh
+    color: _default
+    background: _background
+
+header
+    color: _header
+    background: _header_background
+
+main
+    flex: 1
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    align-content: flex-start
+
+footer
+    color: _footer
+    background: _footer_background
+
+// SELECTORS _________________________________⌋ custom
+// Extended semantic structural vocabulary
+
+.canvas
+    display: flex
+    width: 100%
+    position: relative
+    flex-flow: row wrap
+    justify-content: center
+    overflow: hidden
+    +min(2)
+        min-height: 100vh
+        align-items: center
+
+.content
+    width: c_x
+    display: flex
+    flex-wrap: wrap
+    min-width: c_x_min
+    +min(1)
+        width: c_x_b1
+    +min(2)
+        width: c_x_b2
+        min-width: c_x_b2_min
+    +min(3)
+        width: c_x_b3
+        min-width: c_x_b3_min

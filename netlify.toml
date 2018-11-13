@@ -1,0 +1,4 @@
+# for direct deploys with the Netlify Button
+[build]
+  publish = "prd/"
+  command = "yarn deploy && rm -rf LICENSE README.md .travis.yml .codacy.yml netlify.toml .git .github && git init && git config user.name 'netlify' && git config user.email 'netlify@platframe.com' && git add -A && git commit -m 'platframe: first commit :tada: and deploy :rocket:'"

@@ -1,36 +1,43 @@
-import { scroll } from 'libs/int/animation';
+import { scroll } from 'libs/internal/animation';
 
 export default function() {
 
-    if (document.querySelector('#home .nav-1')) {
+    // preflight checks
+    if (!document.querySelector('.nav-1')) return;
 
-        var context = document.documentElement,
-            triggers = document.querySelectorAll('[data-go]'),
-            duration = 500;
+    try {
 
-        for (let trigger of triggers) {
-
-            // determine the intended destination
-            let destination = trigger.attributes['data-go'].value === 'next'
-                ? trigger.parentNode.nextElementSibling
-                : context;
-
-            trigger.addEventListener('click', function(event) {
-
-                // attempt to use native implementation first
-                if ('scrollBehavior' in document.documentElement.style) {
-
-                    destination.scrollIntoView({ behavior: 'smooth' });
-
-                } else {
-
-                    scroll(destination.offsetTop, duration);
-
-                }
-                event.stopPropagation;
-            });
+        if (!document.querySelector('.nav-1[data-target]')) {
+            throw new Error('Platframe: "nav-1" requires its "data-target" attribute to be set.');
         }
 
+    } catch (error) {
+        console.error(error.message);
+        return;
+    }
+
+    // begin procedure
+    const triggers = document.querySelectorAll('.nav-1'),
+        duration = 500;
+
+    for (let trigger of triggers) {
+
+        let target = document.querySelector(`#${ trigger.attributes['data-target'].value }`);
+
+        trigger.addEventListener('click', function(event) {
+
+            // prefer native implementation
+            if ('scrollBehavior' in document.documentElement.style) {
+
+                target.scrollIntoView({ behavior: 'smooth' });
+
+            } else {
+
+                scroll(target.offsetTop, duration);
+
+            }
+            event.stopPropagation;
+        });
     }
 
 }

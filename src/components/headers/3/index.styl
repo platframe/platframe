@@ -1,0 +1,198 @@
+header-3(scheme = __default)
+    .header-3
+        position: relative
+        display: flex
+        width: 100vw
+        min-width: h_x_min
+        height: h_y
+        justify-content: center
+        color: scheme.header.default
+        background: transparent
+        z-index: 3
+        +min(1)
+            height: h_y_b1
+        +min(2)
+            position: absolute
+            height: h_y_b2
+            top: 0
+        div
+            width: h_x
+            display: flex
+            flex-flow: row wrap
+            align-items: center
+            justify-content: space-between
+            +min(2)
+                width: h_x_b2
+                min-width: h_x_b2_min
+            +min(3)
+                width: h_x_b3
+                min-width: h_x_b3_min
+            h1
+                display: flex
+                margin: 0
+                font-size: 1.9rem
+                font-weight: 600
+                align-items: center
+                letter-spacing: normal
+                +min(1)
+                    font-size: 1.4rem
+                a
+                    display: flex
+                    align-items: center
+                    transition: color 200ms
+                    svg
+                        size(rem(24px))
+                        transition: fill 200ms
+                        margin: -1px rem(8px) 0 0
+                        +min(1)
+                            size(rem(22px))
+                            margin: 0 rem(6px) 0 0
+                        +min(2)
+                            size(rem(24px))
+            nav
+                position: fixed
+                width: rem(225px)
+                right: -(rem(225px))
+                min-height: 100vh
+                top: 0
+                pointer-events: none
+                transition: right 0.3s ease
+                background: _95
+                +min(1)
+                    width: 55%
+                    right: -55%
+                +min(2)
+                    all: unset
+                    @supports not (all: unset)
+                        position: unset
+                        width: unset
+                        right: unset
+                        min-height: unset
+                        pointer-events: unset
+                        transform: unset
+                        background: unset
+                ul
+                    width: 100%
+                    text-align: center
+                    padding-top: header_height
+                    +min(1)
+                        padding-top: h_y_b1
+                    +min(2)
+                        width: auto
+                        padding-top: 0
+                        text-align: initial
+                    li
+                        width: inherit
+                        margin: 0
+                        text-align: center
+                        &:first-of-type a
+                            border-top: 1px solid _80
+                        +min(2)
+                            display: inline
+                            text-align: unset
+                            &:first-of-type a
+                                border: none
+                            &:last-of-type a
+                                margin-right: 0
+                        a
+                            font-size: 1.2rem
+                            display: inline-block
+                            width: inherit
+                            font-weight: 500
+                            text-align: center
+                            padding: 1rem 0
+                            color: scheme.nav.default
+                            border-bottom: 1px solid _80
+                            +min(1)
+                                font-size: 1.6rem
+                                padding: 1.3rem 0
+                            +min(2)
+                                all: unset
+                                @supports not (all: unset)
+                                    display: unset
+                                    width: unset
+                                    font-weight: unset
+                                    text-align: unset
+                                    padding: unset
+                                    color: unset
+                                    border: unset
+                                font-size: 1.15rem
+                                color: scheme.nav.default
+                                margin-right: rem(18px)
+                                cursor: pointer
+                            &:focus, &:hover
+                                color: _90
+                                border-color: _25
+                                background: _30
+                                box-shadow: inset 0 0 20px _25
+                                +min(2)
+                                    background: unset
+                                    box-shadow: unset
+            #toggle
+                position: absolute
+                top: -100%
+                left: -100%
+                &:focus + .button
+                    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
+                    +min(1)
+                        box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
+                &:checked
+                    & + .button
+                        position: fixed
+                        right: 5%
+                        &:hover
+                            box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1)
+                            +min(1)
+                                box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 12px rgba(0, 0, 0, 0.1)
+                        &:before
+                            transform: translateY(-50%) rotate(45deg) scale(1)
+                            top: 50%
+                        &:after
+                            transform: translateY(-50%) rotate(-45deg) scale(1)
+                            top: 50%
+                    & ~ .backdrop
+                        position: fixed
+                        display: block
+                        content: ''
+                        left: 0
+                        top: 0
+                        width: 100vw
+                        height: 100vh
+                        background: rgba(0,0,0,.8)
+                        z-index: 0
+                    & ~ nav
+                        right: 0
+                        top: 0
+                        pointer-events: auto
+                        box-shadow: -8px 0 18px rgba(0,0,0,.3)
+                +min(2)
+                    display: none
+            .button
+                position: relative
+                display: inline-block
+                size(rem(21px))
+                margin-right: 7px
+                border-radius: 100%
+                transition: 250ms
+                cursor: pointer
+                z-index: 1
+                +min(1)
+                    size(rem(28px))
+                &:before, &:after
+                    position: absolute
+                    content: ''
+                    width: 100%
+                    height: 2px
+                    transition: transform 0.35s cubic-bezier(0,0,0.3,1)
+                    background: scheme.header.default
+                &:before
+                    top: 33%
+                &:after
+                    top: 66%
+                &:hover
+                    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
+                    +min(1)
+                        box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
+                +min(2)
+                    display: none
+        { block }

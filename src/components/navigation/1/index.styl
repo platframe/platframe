@@ -1,22 +1,20 @@
 nav-1(scheme = __default)
     .nav-1
-        display: none
-        +min(2)
+        width: 100%
+        margin: 1rem 0
+        button
             display: block
-            position: absolute
-            left: 50%
-            bottom: 35px
+            margin: 0 auto
             background: none
-            transform: translateX(-50%)
-            svg
-                width: 40px
-                height: 40px
-                fill: luminosity(scheme.background) < .5 ? scheme.border : rgba(scheme.nav.vector, 0.5)
             &:hover
                 cursor: pointer
                 svg
                     fill: luminosity(scheme.background) < .5 ? rgba(lighten(scheme.nav.vector, 35%), 0.6) : rgba(darken(scheme.nav.vector, 30%), 0.6)
-            &[data-go="prev"]
-                transform: rotate(180deg) translateX(50%)
-                transform-origin: 50% 40%
+            svg
+                width: 40px
+                height: 40px
+                fill: luminosity(scheme.background) < .5 ? scheme.border : rgba(scheme.nav.vector, 0.5)
+        &[data-direction="prev"]
+            transform: rotate(180deg)
+            transform-origin: 50% 40%
         { block }

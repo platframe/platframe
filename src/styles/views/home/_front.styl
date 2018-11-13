@@ -1,0 +1,66 @@
+.front
+    .content
+        flex-flow: column wrap
+        align-items: center
+        justify-content: center
+        +min(2)
+            margin-top: -20px
+        h2
+            font-size: 4.3rem
+            font-weight: 600
+            margin: 0
+            padding: 0
+            letter-spacing: -3px
+            align-items: flex-start
+            +min(1)
+                font-size: 7.4rem
+                letter-spacing: -5px
+            +min(2)
+                font-size: 9rem
+                margin: 0 0 0.9vw
+                letter-spacing: -7px
+            +min(3)
+                font-size: 10rem
+        div
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: center
+            p
+                width: 100%
+                font-size: 1.4rem
+                text-align: center
+                margin: rem(15px) 0 rem(30px)
+                color: scheme.heading
+                line-height: 1.2
+                +min(1)
+                    font-size: 2rem
+                    margin: 0 0 rem(80px)
+                +min(2)
+                    font-size: 2.6rem
+                +min(3)
+                    font-size: 2.8rem
+            div
+                display: flex
+                flex-flow: row wrap
+                justify-content: center
+                width: 100%
+                +min(1)
+                    width: auto
+                a
+                    button(large, color: mediumseagreen)
+                    margin: rem(8px) 0
+                    min-width: 60%
+                    +min(1)
+                        min-width: auto
+                        font-size: 1.2rem
+                        margin: 0
+                        padding: rem(16px) rem(35px)
+                        &:first-of-type
+                            margin-right: rem(14px)
+                    +min(2)
+                        font-size: 1.25rem
+                        padding: rem(17px) rem(36px)
+                    +min(3)
+                        font-size: 1.32rem
+                        padding: rem(18px) rem(38px)

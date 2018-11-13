@@ -12,7 +12,7 @@ nav-2(scheme = __default, width = rem(260px))
         z-index: 1
         +min(2)
             position: fixed
-            top: 100px
+            top: 0
             right: 0
             width: width
             height: 100%
@@ -23,16 +23,16 @@ nav-2(scheme = __default, width = rem(260px))
             border-bottom: 0
             border-left: 1px solid scheme.border
         +max(2)
+            padding: .9rem
             ul
                 display: flex
                 flex-flow: row wrap
                 justify-content: center
                 li
-                    margin: 0
+                    margin: .3rem .4rem
         a
-            padding: rem(15px) rem(10px)
-            font-size: .9rem
-            text-transform: uppercase
+            &:hover
+                text-decoration: underline
             +max(2)
                 display: inline-block
                 &:hover

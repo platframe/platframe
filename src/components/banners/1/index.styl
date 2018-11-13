@@ -4,25 +4,45 @@ banner-1(scheme = __default)
         white-space: nowrap
         pointer-events: none
         transform: rotate(-45deg)
-        bottom: 32px
-        right: -65px
+        bottom: rem(42px)
+        right: -(rem(62px))
         z-index: 1
-        +min(1)
-            bottom: 42px
-            right: -56px
         a
-            display: block
+            display: flex
+            align-items: center
+            justify-content: center
             margin: 0
-            padding: 16px 100px
+            width: rem(275px)
+            min-height: rem(54px)
             color: scheme.default
             text-align: center
             text-decoration: none
             font-size: 1rem
-            font-weight: 700
+            font-weight: 600
             pointer-events: auto
             border: 1px solid scheme.default
             background: scheme.background
             &:hover
                 color: scheme.background
                 background: scheme.default
+            &.icon
+                &:hover
+                    svg
+                        size(rem(24px))
+                        position: static
+                        bottom: 0
+                    span
+                        width: 0
+                        height: 0
+                        opacity: 0
+                        position: absolute
+                        bottom: -100px
+                span
+                    transition: all 250ms
+                svg
+                    width: 0
+                    height: 0
+                    fill: _100
+                    position: absolute
+                    transition: all 250ms
         { block }

@@ -1,6 +1,7 @@
-mixin nav-1(direction, icon)
-    button(class="nav-1" data-go=direction)
-        svg
-            use(
-                xlink:href=icon ? "/assets/images/sprite/symbols.svg#" + icon : "/assets/images/sprite/symbols.svg#nav-1-fill"
-            )
+mixin nav-1(target = "home", direction = "next", icon = "nav-1-fill")
+    div(
+        class="nav-1"
+        data-target=target
+        data-direction=direction
+        )
+        button: svg: use(xlink:href=`/assets/images/_sprites/symbols.svg#${ icon }`)

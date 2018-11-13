@@ -1,0 +1,34 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  PLATFORM  ━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Media and platform routines.                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+min(breakpoint)
+    // +min(1) is equal to +min(first); Or pass a literal: +min(rem(500px))
+    query = 'screen and (min-width: %s)' % (scale[breakpoint] || breakpoint)
+    @media query
+        { block }
+
+max(breakpoint)
+    // opposite of +min()
+    query = 'screen and (max-width: %s)' % (scale[breakpoint] || breakpoint)
+    @media query
+        { block }
+
+between(min, max)
+    // similar to +min() but with a maximum value
+    min = (scale[min] || min), max = (scale[max] || max)
+    query = 'screen and (min-width: %s)' % min + 'and (max-width: %s)' % max
+    @media query
+        { block }
+
+min-res(resolution)
+    // pass target resolution in dpi, dppx or dpcm units
+    query = 'screen and (min-resolution: %s)' % resolution
+    @media query
+        { block }
+
+max-res(resolution)
+    // opposite of +min-res()
+    query = 'screen and (max-resolution: %s)' % resolution
+    @media query
+        { block }

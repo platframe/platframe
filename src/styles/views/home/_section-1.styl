@@ -1,0 +1,48 @@
+.section-1
+    .content
+        align-items: center
+        justify-content: center
+        +min(3)
+            align-items: stretch
+            justify-content: space-between
+        div
+            +max(1)
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                padding: 0 10px
+            +max(2)
+                padding: 0 40px
+            +min(2)
+                display: flex
+                align-items: center
+            svg
+                width: 80%
+                +min(1)
+                    width: 50%
+                +max(2)
+                    display: block
+                    margin: 0 auto
+                +min(2)
+                    float: left
+                    width: 55%
+                    margin: 0 rem(65px) 0 0
+                +min(3)
+                    width: 35%
+            article
+                text-align: center
+                +max(2)
+                    width: 100%
+                    margin-top: 15px
+                +min(2)
+                    text-align: left
+                p
+                    font-size: 1.3rem
+                    line-height: 1.4
+                    +min(1)
+                        font-size: 1.9rem
+                    +min(2)
+                        font-size: 1.7rem
+                    +min(3)
+                        font-size: 1.8rem

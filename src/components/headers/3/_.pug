@@ -1,0 +1,32 @@
+mixin header-3(url, icon, h1, navigation, hook)
+    header(
+        class=hook ? "header-3 " + hook :  "header-3"
+        role="banner")
+
+        div
+            h1
+                a(href=url)
+                    svg: use(xlink:href=icon ? "/assets/images/_sprites/symbols.svg#" + icon : "/assets/images/_sprites/symbols.svg#header-3-logo")
+                    =h1
+
+            input(id="toggle" type="checkbox")
+            label(for="toggle" class="button")
+
+            label(
+                for="toggle"
+                class="backdrop"
+                tabindex="-1"
+                hidden
+                aria-hidden="true")
+
+            nav(
+                role="navigation"
+                aria-label="main menu"
+                itemscope
+                itemtype="https://schema.org/SiteNavigationElement")
+
+                ul
+                    for anchor in navigation
+
+                        li
+                            a(href=anchor.href)= anchor.name

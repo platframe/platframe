@@ -1,0 +1,25 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  VECTOR  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Vector defaults.                                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+svg
+    fill: _v
+    header &
+        fill: _h_v
+    footer &
+        fill: _f_v
+
+// hide embedded SVG sprites
+.svg-sprite-inline
+    position: absolute
+    visibility: hidden
+    z-index: -1
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  GENERAL  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Rules pertaining to all image types.                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+// ensure containment within fluid grid
+img
+    max-width: 100%
+    height: auto // override inline attributes

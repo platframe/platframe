@@ -1,0 +1,56 @@
+footer-3(scheme = __default)
+    .footer-3
+        display: flex
+        width: 100vw
+        padding: rem(20px) 0
+        align-items: center
+        justify-content: center
+        > div
+            display: flex
+            width: f_x
+            flex-flow: row wrap
+            +min(1)
+                width: f_x_b1
+                justify-content: space-between
+            +min(2)
+                width: f_x_b2
+            +min(3)
+                width: f_x_b3
+                min-width: f_x_b3_min
+            div
+                display: flex
+                width: 100%
+                justify-content: center
+                +min(1)
+                    width: auto
+                &.left
+                    li:first-of-type::after
+                        content: '\00A0\00A0\00A0\00B7\00A0\00A0'
+                    +min(1)
+                        justify-content: flex-start
+                &.right
+                    order: -1
+                    +min(1)
+                        order: initial
+                        justify-content: flex-end
+                    a
+                        font-size: 1.5rem
+                        font-weight: 700
+                        &::before
+                            content: '\00A0\00A0'
+                        &::after
+                            content: '\00A0\00A0'
+                        &.t
+                            &:hover, &:focus, &:active
+                                color: _twitter
+                        &.g
+                            &:hover, &:focus, &:active
+                                color: _google
+                        &.f
+                            &:hover, &:focus, &:active
+                                color: _facebook
+                    li:last-child a::after
+                        content: ''
+        li
+            display: inline-block
+        { block }
