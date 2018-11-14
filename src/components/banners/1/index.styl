@@ -4,9 +4,12 @@ banner-1(scheme = __default)
         white-space: nowrap
         pointer-events: none
         transform: rotate(-45deg)
-        bottom: rem(42px)
-        right: -(rem(62px))
+        bottom: rem(22px)
+        right: -(rem(82px))
         z-index: 1
+        +min(1)
+            bottom: rem(42px)
+            right: -(rem(62px))
         a
             display: flex
             align-items: center

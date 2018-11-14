@@ -36,7 +36,7 @@ header-2(scheme = __default)
                 letter-spacing: normal
                 color: scheme.header.default
                 margin: 0
-                padding: rem(20px) 0
+                padding: rem(25px) 0 rem(12px)
                 justify-content: center
                 +min(1)
                     font-size: 1.4rem
@@ -58,16 +58,17 @@ header-2(scheme = __default)
                             height: 20px
                             margin: 0 8px 0 0
             h2
-                font-size: 1rem
+                font-size: 1.1rem
+                font-weight: 600
                 text-transform: lowercase
                 +min(1)
                     font-size: 1.3rem
                     letter-spacing: normal
                 +max(2)
                     margin-top: rem(8px)
+                    letter-spacing: normal
                 +min(2)
                     font-size: 1.8rem
-                    font-weight: 600
             div // nav: breadcrumbs (optional)
                 display: flex
                 align-items: baseline
@@ -85,10 +86,14 @@ header-2(scheme = __default)
                         display: inline-flex
                         list-style-type: none
                         a
-                            font-size: .95rem
+                            font-size: 1.1rem
                             font-weight: 400
                             text-transform: lowercase
                             transition: color 200ms
+                            +min(1)
+                                font-size: 1.3rem
+                            +min(2)
+                                font-size: 1.05rem
         .peripheral
             width: inherit
             padding: 0 rem(50px)

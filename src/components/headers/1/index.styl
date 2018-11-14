@@ -1,15 +1,19 @@
 header-1(scheme = __default)
     .header-1
         display: flex
-        position: fixed
         width: 100vw
+        min-width: header_width_min
         height: header_height
         justify-content: center
         align-items: center
-        min-width: header_width_min
         color: scheme.header.default
         background: transparent
         z-index: 2
+        +min(1)
+            position: fixed
+            height: header_height_b1
+        +min(2)
+            height: header_height_b2
         div // inherit size from .content
             display: flex
             flex-wrap: wrap
@@ -25,7 +29,7 @@ header-1(scheme = __default)
             h1
                 display: flex
                 margin: 0
-                font-size: 1.9rem
+                font-size: 1.5rem
                 font-weight: 600
                 align-items: center
                 letter-spacing: normal
