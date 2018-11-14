@@ -8,7 +8,8 @@
     "development": "NODE_ENV=development gulp",
     "production": "NODE_ENV=production gulp production",
     "preflight": "NODE_ENV=production gulp preflight",
-    "deploy": "NODE_ENV=production gulp deploy"
+    "deploy": "NODE_ENV=production gulp deploy",
+    "serve": "NODE_ENV=production gulp serve"
   },
   "repository": {
     "type": "git",

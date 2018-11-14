@@ -3,15 +3,15 @@ import c from 'ansi-colors';
 import { app, ctx } from '..';
 
 const server = create();
-const production = ctx.name === 'production';
+const production = ctx.id === 'production';
 
-const logPrefix = `\u{00A0}${ c.white('Watching source, waiting to synchronize...') }
+const log = `\u{00A0}${ c.white('Watching source, waiting to synchronize...') }
 \u{00A0} ${ c.gray('project:') } ${ c.yellow.dim(app.name.charAt(0).toUpperCase().concat(app.name.slice(1))) }
 \u{00A0} ${ c.gray('version:') } ${ c.green.dim(`v${ app.version }`) }
 \u{00A0} ${ c.gray('context:') } ${ c.red.dim(`${ ctx.id }`) }\u{00A0}\n`;
 
 const options = {
-    logPrefix,
+    logPrefix: production ? '' : log,
     port: app.port,
     // DNS lookup and external address
     online: true,
@@ -36,7 +36,7 @@ const options = {
     },
 };
 
-export function serve(done) {
+export function host(done) {
     server.init(options);
     done();
 }

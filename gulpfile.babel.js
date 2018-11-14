@@ -13,7 +13,7 @@ import collect from './settings/gulp/collect';
 import imgLink from './settings/gulp/img-link';
 import templates from './settings/gulp/templates';
 import imgSprite from './settings/gulp/img-sprite';
-import { serve } from './settings/gulp/servers';
+import { host } from './settings/gulp/servers';
 
 /* TASKS ━━━━━━━━━━━━━━━ public  ━━━━━━━━━━━━━━ */
 
@@ -28,7 +28,7 @@ export const development = series(
         imgSprite,
         logic,
 
-    ), serve, notify, watch
+    ), host, notify, watch
 );
 
 export const production = series(
@@ -56,9 +56,11 @@ export const preflight = series(
         imgSprite,
         logic,
 
-    ), serve, notify
+    ), host, notify
 
 );
+
+export const serve = preflight;
 
 export const deploy = series(
     production,
