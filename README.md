@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="http://platframe.com">
-        <img src="http://platframe.com/assets/images/external/_link/platframe.svg" width=100 height=100>
+    <a href="https://platframe.com">
+        <img src="https://platframe.com/assets/images/external/_link/platframe.svg" width=100 height=100>
     </a>
 </p>
 
