@@ -1,0 +1,6 @@
+# build dirs
+dev/
+prd/
+
+# external libs
+src/logic/js/client/libs/external/

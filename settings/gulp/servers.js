@@ -12,7 +12,7 @@ const log = `\u{00A0}${ c.white('Watching source, waiting to synchronize...') }
 
 const options = {
     logPrefix: production ? '' : log,
-    port: app.port,
+    port: ctx.server.app.port,
     // DNS lookup and external address
     online: true,
     // make server publicly accessable

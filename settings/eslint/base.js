@@ -10,6 +10,11 @@ module.exports = {
         'ecmaVersion': 2018,
         'sourceType': 'module',
     },
+    'globals': {
+        'Backbone': false,
+        'API_HOST': false,
+        'API_PORT': false,
+    },
     'rules': {},
 
 };

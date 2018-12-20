@@ -27,7 +27,7 @@ module.exports = {
         'no-inner-declarations': 'off',
         'no-multiple-empty-lines': [
             'warn', {
-                'max': 1,
+                'max': 3,
                 'maxEOF': 1,
             }
         ],
