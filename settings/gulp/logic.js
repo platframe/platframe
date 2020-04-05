@@ -11,10 +11,16 @@ import { app, src as source, ctx } from '..';
 const production = ctx.id === 'production';
 
 const data = {
+    // meta: common
     ENV: `'${ ctx.id }'`,
     VERSION: `'${ app.version }'`,
     AUTHOR: `'${ app.author }'`,
     DATE: `'${ app.date }'`,
+    // meta: servers
+    APP_HOST: `'${ ctx.server.app.host }'`,
+    APP_PORT: `'${ ctx.server.app.port }'`,
+    API_HOST: `'${ ctx.server.api.host }'`,
+    API_PORT: `'${ ctx.server.api.port }'`,
 };
 
 const preamble =
@@ -28,7 +34,7 @@ const preamble =
 function logic() {
 
     return rollup({
-        input: `${ source.logic }/js/root.js`,
+        input: `${ source.logic }/js/client/root.js`,
         plugins: [
             eslint({
                 exclude: [
@@ -36,18 +42,26 @@ function logic() {
                     `${ source.images }/**`,
                     `${ source.styles }/**`,
                     `${ source.templates }/**`,
+                    `${ source.logic }/js/client/libs/external/**`,
                 ],
             }),
             resolve(),
             include({
-                paths: [source.components, `${ source.logic }/js/`]
+                paths: [source.components, `${ source.logic }/js/client/`]
             }),
             replace({
-                exclude: 'node_modules/**',
+                exclude: [
+                    'settings/**',
+                    'node_modules/**',
+                    `${ source.logic }/js/client/libs/external/**`,
+                ],
                 values: data,
             }),
             babel({
-                exclude: 'node_modules/**',
+                exclude: [
+                    'node_modules/**',
+                    `${ source.logic }/js/client/libs/external/**`,
+                ],
             }),
             (production && terser({
                 output: {

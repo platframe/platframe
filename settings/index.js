@@ -17,7 +17,6 @@ const // cache environment context
         date   : (new Date).toISOString(),
         // seconds elapsed since UNIX epoch
         time   : Math.floor(Date.now() / 1000),
-        port   : process.env.npm_package_config_port,
         author : process.env.npm_package_author_name,
         version: process.env.npm_package_version,
     },
@@ -35,14 +34,20 @@ const // cache environment context
     // config: development
     development = {
         id: 'development',
-        app: {
-            host: '0.0.0.0',
-            port: 3003,
-        },
-        db: {
-            host: '0.0.0.0',
-            port: 27017,
-            name: 'test',
+        server: {
+            app: {
+                host: '127.0.0.1',
+                port: 3000,
+            },
+            api: {
+                host: '127.0.0.1',
+                port: 3001,
+            },
+            db: {
+                host: '127.0.0.1',
+                port: 3002,
+                name: 'test',
+            },
         },
         path: {
             root:   `${ OUT }`,
@@ -55,14 +60,20 @@ const // cache environment context
     // config: production
     production = {
         id: 'production',
-        app: {
-            host: '0.0.0.0',
-            port: 3003,
-        },
-        db: {
-            host: '0.0.0.0',
-            port: 27017,
-            name: '',
+        server: {
+            app: {
+                host: '127.0.0.1',
+                port: process.env.PORT || 80,
+            },
+            api: {
+                host: '127.0.0.1',
+                port: 3001,
+            },
+            db: {
+                host: '127.0.0.1',
+                port: 3002,
+                name: '',
+            },
         },
         path: {
             root:   `${ OUT }/`,
