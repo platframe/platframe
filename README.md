@@ -83,22 +83,29 @@ The only prerequisite is that the chosen stack should have sufficient feature pa
 
 ## Getting started
 
-### 0. Prerequisites
+### 1. Prerequisites
 
-- **Node.js**&nbsp; `≥ v8.0`
-- **NPM**&nbsp; `≥ v5.2`
+- Node.js&nbsp; `≥ v8.0`
+- NPM&nbsp; `≥ v5.2`
 
-### 1. Get the source
+##### Optional:
+- Yarn
+- Node Version Manager (nvm)
+
+### 2. Get the source
 
 - Option 1: `npx degit platframe/new my-app`
 - Option 2: [download](https://github.com/platframe/platframe/releases/latest) the latest release
 
-### 2. Install &amp; customize
+### 3. Install
 
-At a minimum, install only the dependencies.
-- `cd new-project && npm install`
+You may run [nvm](http://nvm.sh) to ensure you use the recommended Node version:
+- `cd new-project && nvm use`
 
-Alternatively, setup your VCS as part of the installation run.
+Install the dependencies:
+- `cd new-project && yarn install`
+
+Alternatively, setup your VCS as part of the installation run:
 - `cd new-project && git init && yarn`
 
 Change the default metadata in `package.json` to reflect your project.
@@ -132,3 +139,6 @@ Refer to the contribution [guidelines](.github/CONTRIBUTING.md) on how to get st
 &#169; 2018 [Cygnul](https://cygnul.com).
 Authored by [@gidhon](https://github.com/gidhon).
 Released under the [MIT](LICENSE) license.
+
+
+[http://nvm.sh]: http://nvm.sh
