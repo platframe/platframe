@@ -100,13 +100,13 @@ The only prerequisite is that the chosen stack should have sufficient feature pa
 ### 3. Install
 
 You may run [nvm](http://nvm.sh) to ensure you use the recommended Node version:
-- `cd new-project && nvm use`
+- `cd my-app && nvm use`
 
 Install the dependencies:
-- `cd new-project && yarn install`
+- `cd my-app && yarn install`
 
 Alternatively, setup your VCS as part of the installation run:
-- `cd new-project && git init && yarn`
+- `cd my-app && git init && yarn`
 
 Change the default metadata in `package.json` to reflect your project.
 Optionally add a `README.md`
