@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" xmlns="http://www.w3.org/1999/html">
     <a href="https://platframe.com">
         <img src="https://platframe.com/assets/images/external/_link/platframe.svg" width=100 height=100>
     </a>
@@ -14,11 +14,11 @@
     <a href="https://travis-ci.org/platframe/platframe"><img src="https://travis-ci.org/platframe/platframe.svg?branch=master"></a>
     <a href="https://www.codacy.com/app/platframe/platframe?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=platframe/platframe&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/e2faa208e2b94932b4612df9cf306bd5"/></a>
     <a href="https://david-dm.org/platframe/platframe?type=dev"><img src="https://david-dm.org/platframe/platframe/dev-status.svg"></a>
-    <a href="http://t.me/platframe"><img src="https://img.shields.io/badge/telegram-chat-30A7DE.svg"></a>
+    <!-- <a href="http://t.me/platframe"><img src="https://img.shields.io/badge/telegram-chat-30A7DE.svg"></a> -->
 </p>
 
 <p align="center">
-    TL;DR: Hit this button and go build something awesome.
+    Build and deploy your new project in one go:
 </p>
 
 <p align="center">
