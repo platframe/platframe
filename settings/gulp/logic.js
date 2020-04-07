@@ -1,11 +1,11 @@
 import { src, dest } from 'gulp';
 import { rollup } from 'rollup';
 import babel from 'rollup-plugin-babel';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import { eslint } from 'rollup-plugin-eslint';
 import { terser } from 'rollup-plugin-terser';
 import include from 'rollup-plugin-includepaths';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import { app, src as source, ctx } from '..';
 
 const production = ctx.id === 'production';

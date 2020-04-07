@@ -10,7 +10,7 @@ import { src as source, ctx } from '..';
 
 const plugins = [
     imagemin.gifsicle(),
-    imagemin.jpegtran(),
+    imagemin.mozjpeg(),
     imagemin.optipng(),
     imagemin.svgo({ _plugins })
 ];

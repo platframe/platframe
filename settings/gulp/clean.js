@@ -1,6 +1,8 @@
 import del from 'del';
 import { ctx } from '..';
 
-const clean = () => del([ ctx.path.root ]);
+const clean = async () => {
+    await del([ ctx.path.root ]);
+};
 
 export default clean;
