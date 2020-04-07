@@ -4,12 +4,10 @@ module.exports = function(api) {
     // gets cleared on environment change
     api.cache.invalidate(() => process.env.NODE_ENV);
 
-    const presets = {
+    return {
         presets: [
             ['@babel/preset-env'],
         ],
     };
-
-    return presets;
 
 };

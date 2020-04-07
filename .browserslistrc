@@ -1,8 +1,9 @@
-> 1%
-last 2 versions
+> 1%, not dead
+current Node
 Firefox ESR
-Firefox >= 28
-Chrome >= 29
-Safari >= 8
-Opera >= 17
-IE >= 10
+Firefox >= 53
+Chrome >= 55
+Safari >= 11
+Opera >= 42
+Edge >= 15
+not IE 11
