@@ -112,8 +112,8 @@ Change the default metadata in `package.json` to reflect your project.
 Optionally add a `README.md`
 
 ### Develop
-Spin up the development environment by running `npm run development`  
-By default, the build will be served at `localhost:3003`  
+Spin up the development environment by running `yarn develop`  
+By default, the build will be served at `localhost:3000`  
 The build system takes care of transpiling modified sources and triggering client updates
 
 ### Test
@@ -124,8 +124,8 @@ In addition to hosting the build on your local machine, the `preflight` task wil
 \* Currently, only linting for JavaScript is wired to the test task. You are responsible for integrating additional testing mechanisms as required.
 
 ### Deploy
-For an optimized, production-targeted build, run `npm run production`  
-You can optionally wire your deployment logic to `npm run deploy`
+For an optimized, production-targeted build, run `yarn build`  
+You can optionally wire your deployment logic to `yarn deploy`
 
 ## Documentation
 The documentation can be found at [platframe.com/docs](https://platframe.com/docs)
