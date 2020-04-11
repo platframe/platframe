@@ -5,8 +5,8 @@
     "start": "NODE_ENV=development gulp",
     "lint": "NODE_ENV=production eslint --fix src/",
     "test": "npm run lint",
-    "development": "NODE_ENV=development gulp",
-    "production": "NODE_ENV=production gulp production",
+    "develop": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp build",
     "preflight": "NODE_ENV=production gulp preflight",
     "deploy": "NODE_ENV=production gulp deploy",
     "serve": "NODE_ENV=production gulp serve"
@@ -22,7 +22,7 @@
   "description": "Project description.",
   "config": {
     "host": "0.0.0.0",
-    "port": 3003,
+    "port": 3000,
     "ghooks": {
       "pre-commit": "npm test"
     }

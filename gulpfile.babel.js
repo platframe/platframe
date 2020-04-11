@@ -17,7 +17,7 @@ import { host } from './settings/gulp/servers';
 
 /* TASKS ━━━━━━━━━━━━━━━ public  ━━━━━━━━━━━━━━ */
 
-export const development = series(
+export const develop = series(
     clean,
     collect,
 
@@ -31,7 +31,7 @@ export const development = series(
     ), host, notify, watch
 );
 
-export const production = series(
+export const build = series(
     clean,
     collect,
 
@@ -63,8 +63,8 @@ export const preflight = series(
 export const serve = preflight;
 
 export const deploy = series(
-    production,
+    build,
 );
 
 // default task
-export default development;
+export default develop;

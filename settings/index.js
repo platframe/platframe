@@ -37,7 +37,7 @@ const // cache environment context
         id: 'development',
         app: {
             host: '0.0.0.0',
-            port: 3003,
+            port: 3000,
         },
         db: {
             host: '0.0.0.0',
@@ -57,7 +57,7 @@ const // cache environment context
         id: 'production',
         app: {
             host: '0.0.0.0',
-            port: 3003,
+            port: 3000,
         },
         db: {
             host: '0.0.0.0',
