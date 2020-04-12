@@ -35,7 +35,7 @@ header-3(scheme = __default)
                 align-items: center
                 letter-spacing: normal
                 +min(1)
-                    font-size: 1.4rem
+                    font-size: 1.5rem
                 a
                     display: flex
                     align-items: center
@@ -101,7 +101,7 @@ header-3(scheme = __default)
                             font-weight: 500
                             text-align: center
                             padding: 1rem 0
-                            color: scheme.nav.default
+                            color: scheme.nav.link
                             border-bottom: 1px solid _80
                             +min(1)
                                 font-size: 1.6rem
@@ -117,7 +117,7 @@ header-3(scheme = __default)
                                     color: unset
                                     border: unset
                                 font-size: 1.15rem
-                                color: scheme.nav.default
+                                color: scheme.nav.link
                                 margin-right: rem(18px)
                                 cursor: pointer
                             &:focus, &:hover
@@ -126,6 +126,8 @@ header-3(scheme = __default)
                                 background: _30
                                 box-shadow: inset 0 0 20px _25
                                 +min(2)
+                                    color: scheme.nav.hover
+                                    border: unset
                                     background: unset
                                     box-shadow: unset
             #toggle
