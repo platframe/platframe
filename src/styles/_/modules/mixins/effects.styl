@@ -1,13 +1,19 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  LINES  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-hr-gradient(direction, color_1, color_2, margin...)
-    // args: (right, #ccc, #fff, 20px 0)
+hr-gradient()
     clear: both
+    width: 100%
     height: 1px
     border: none
-    margin: margin
     padding: 0
-    linear_gradient(direction, color_1, color_2)
+    // Mixins may be called with or without parenthesis, but for the
+    // internal 'arguments' variable to pass the correctly formatted
+    // arguments (thus, verbatim: including the commas) it needs to
+    // be called (unambiguously) as a mixin, without the parenthesis.
+    background: linear-gradient(arguments)
+
+// example:
+// hr-gradient to right, rgba(0,0,0,.1), _65 50%, rgba(0,0,0,.1) 100%
 
 hr-solid(color_1, color_2, height, margin...)
     // args: (#ccc, #fff, 3px, 20px 0)
