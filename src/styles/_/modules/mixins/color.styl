@@ -69,14 +69,13 @@ anchors(scheme = __default, target = anchor)
         target = scheme[target]
     else
         target = scheme
-    a
-        &:link
-            color: target.link;    svg { fill: @color }
-        &:visited
-            color: target.visited; svg { fill: @color }
-        &:hover
-            color: target.hover;   svg { fill: @color }
-        &:focus
-            color: target.focus;   svg { fill: @color }
-        &:active
-            color: target.active;  svg { fill: @color }
+    &:link
+        color: target.link;    svg { fill: @color }
+    &:visited
+        color: target.visited; svg { fill: @color }
+    &:hover
+        color: target.hover;   svg { fill: @color }
+    &:focus
+        color: target.focus;   svg { fill: @color }
+    &:active
+        color: target.active;  svg { fill: @color }
