@@ -1,0 +1,37 @@
+.btn
+    button()
+
+.btn--rounded
+    button(rounded: true)
+
+.btn--small
+    button(size: small)
+    &.btn--rounded
+        button(size: small, rounded: true)
+
+.btn--large
+    button(size: large)
+    &.btn--rounded
+        button(size: large, rounded: true)
+
+.btn--full
+    button(size: full)
+    &.btn--rounded
+        button(size: large, rounded: true)
+
+.btn-border
+    button(type: border)
+    &.btn--rounded
+        button(type: border, rounded: true)
+    &.btn--small
+        button(type: border, size: small)
+        &.btn--rounded
+            button(type: border, size: small, rounded: true)
+    &.btn--large
+        button(type: border, size: large)
+        &.btn--rounded
+            button(type: border, size: large, rounded: true)
+    &.btn--full
+        button(type: border, size: full)
+        &.btn--rounded
+            button(type: border, size: full, rounded: true)
