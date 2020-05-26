@@ -1,51 +1,41 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  BUTTONS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-button(size = '', type = 'f', color = _default, fontsize = 1rem, background = true, padding...)
-
-    background = background ? background : transparent
+button(size = '', type = '', color = _default, fontsize = 1.1rem, rounded = false, padding = rem(15px) rem(25px))
+    // The default button style is medium-sized, filled and borderless.
+    color: invert(color)
+    font-size: fontsize
+    text-align: center
+    padding: padding
+    background: color
+    border-radius: rounded ? 5px : 0
+    transition: background-color 150ms linear
+    &:hover
+        cursor: pointer
+        background: lighten(color, 25%)
 
     if size is 'small'
         font-size: 1rem
-        padding: padding or rem(14px) rem(20px)
-
-    else if size is 'medium'
-        font-size: 1.1rem
-        padding: padding or rem(15px) rem(25px)
+        padding: rem(6px) rem(12px)
 
     else if size is 'large'
         font-size: 1.25rem
-        padding: padding or rem(16px) rem(28px)
+        padding: rem(16px) rem(28px)
 
-    else if size is 'stretch'
+    else if size is 'full'
         width: 100%
         font-size: fontsize
-        padding: padding or rem(14px) rem(20px)
+        padding: rem(14px) rem(20px)
 
-    else
-        font-size: fontsize
-        padding: padding or (rem(14px) rem(20px))
-
-    if type == 'flat_inverted' || type == 'fi' || type == '1di'
-
-        color: white
-        background: color
-        &:hover
-            color: color
-            background: background
-
-    else if type == 'flat' || type == 'f' || type == '1d'
-
+    if type is 'border'
         color: color
-        background: background
+        background: white
+        border: 2px solid color
         &:hover
             color: white
             background: color
 
-    // shared properties
-    text-align: center
-    border: 1px solid color
-    &:hover
-        cursor: pointer
+// EXAMPLE
+// button, a { button(size: small, type: border, rounded: true) }
 
 button-3d(type, color, size, weight, radius, padding...)
     // args: (light, rgba(200,200,200,0.7), 0.9em, normal, 5px, 10px 30px) - (light)
