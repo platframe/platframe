@@ -1,8 +1,8 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  BUTTONS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 button(size = '', type = '', color = _default, fontsize = 1.1rem, rounded = false, padding = rem(15px) rem(25px))
-    // The default button style is medium-sized, filled and borderless.
-    color: invert(color)
+    // The default button style is square, medium-sized, filled and borderless.
+    color: white
     font-size: fontsize
     text-align: center
     padding: padding
@@ -11,7 +11,7 @@ button(size = '', type = '', color = _default, fontsize = 1.1rem, rounded = fals
     transition: background-color 150ms linear
     &:hover
         cursor: pointer
-        background: lighten(color, 25%)
+        background: lighten(color, 7%)
 
     if size is 'small'
         font-size: 1rem
