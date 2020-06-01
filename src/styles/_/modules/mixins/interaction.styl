@@ -1,9 +1,17 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  BUTTONS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-button(size = '', type = '', color = _default, fontsize = 1.1rem, rounded = false, padding = rem(15px) rem(25px))
+button(
+size = '',
+type = '',
+color = _default,
+rounded = false,
+font-size = 1.1rem,
+padding = rem(15px) rem(25px),
+border-width = 2px
+)
     // The default button style is square, medium-sized, filled and borderless.
     color: white
-    font-size: fontsize
+    font-size: font-size
     text-align: center
     padding: padding
     background: color
@@ -14,25 +22,26 @@ button(size = '', type = '', color = _default, fontsize = 1.1rem, rounded = fals
         background: lighten(color, 7%)
 
     if size is 'small'
-        font-size: 1rem
+        font-size: (font-size is 1.1rem) ? 1rem : font-size
         padding: rem(6px) rem(12px)
 
     else if size is 'large'
-        font-size: 1.25rem
+        font-size: (font-size is 1.1rem) ? 1.25rem : font-size
         padding: rem(16px) rem(28px)
 
     else if size is 'full'
         width: 100%
-        font-size: fontsize
+        font-size: (font-size is 1.1rem) ? 1.25rem : font-size
         padding: rem(14px) rem(20px)
 
     if type is 'border'
         color: color
         background: white
-        border: 2px solid color
+        border: border-width solid color
         &:hover
             color: white
             background: color
+
 
 // EXAMPLE
 // button, a { button(size: small, type: border, rounded: true) }
