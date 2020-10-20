@@ -8,6 +8,12 @@ module.exports = function(api) {
         presets: [
             ['@babel/preset-env'],
         ],
+        plugins: [
+            [   // enable static property syntax for ES2015 classes
+                require("@babel/plugin-proposal-class-properties"),
+                { loose: false },
+            ]
+        ],
     };
 
 };
