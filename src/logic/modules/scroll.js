@@ -1,4 +1,4 @@
-import { scroll } from '../libs/internal/animation';
+import { scroll } from '../libs/animation';
 
 // set scroll behavior of in-page anchors to "smooth"
 function smooth() {
