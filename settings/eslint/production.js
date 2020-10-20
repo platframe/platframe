@@ -7,8 +7,9 @@ module.exports = {
             'always',
         ],
         'eqeqeq': 'error',
+        'no-undef': 'warn',
         'no-console': ['error',
-            { 
+            {
                 allow: ['warn', 'error'],
             },
         ],

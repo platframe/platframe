@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
@@ -40,7 +41,7 @@
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.11.0",
     "ghooks": "^2.0.4",
     "gulp": "^4.0.2",
     "gulp-if": "^3.0.0",
