@@ -23,6 +23,7 @@ module.exports = {
             'always',
         ],
         'eqeqeq': 'warn',
+        'no-undef': 'warn',
         'no-console': 'off',
         'no-inner-declarations': 'off',
         'no-multiple-empty-lines': [
