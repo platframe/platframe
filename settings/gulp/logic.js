@@ -28,7 +28,7 @@ const preamble =
 function logic() {
 
     return rollup({
-        input: `${ source.logic }/js/root.js`,
+        input: `${ source.logic }/root.js`,
         plugins: [
             eslint({
                 exclude: [
@@ -40,7 +40,7 @@ function logic() {
             }),
             resolve(),
             include({
-                paths: [source.components, `${ source.logic }/js/`]
+                paths: [source.components, `${ source.logic }/`]
             }),
             replace({
                 exclude: 'node_modules/**',
@@ -60,7 +60,7 @@ function logic() {
             return bundle.write({
                 format: 'iife',
                 sourcemap: production ? false : true,
-                file: `${ ctx.path.logic }/js/root.js`,
+                file: `${ ctx.path.logic }/root.js`,
             });
         }) // verbatim copy non-JS logic
         .then(src(`${ source.logic }/**/*.{py,rb,php*}`)
