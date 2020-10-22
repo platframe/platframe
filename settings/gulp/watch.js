@@ -21,7 +21,7 @@ function watcher() {
     ], series(styles, reload));
 
     watch([
-        `${ src.logic }/js/**/*.js`,
+        `${ src.logic }/**/*.js`,
         `${ src.components }/**/*.js`,
     ], series(logic, reload));
 
