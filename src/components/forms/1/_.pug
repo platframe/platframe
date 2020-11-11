@@ -1,4 +1,5 @@
-mixin form-1(legend, action, method, phone, spam, hook)
+mixin form-1({ legend, action, method, phone, spam, hook })
+
     form(legend, class=hook ? "form-1 " + hook :  "form-1")
 
         fieldset.core
