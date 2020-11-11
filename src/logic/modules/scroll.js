@@ -18,20 +18,14 @@ function smooth() {
                     : false;
 
             if (destination) {
-                link.addEventListener('click', function(event) {
+                link.addEventListener('click', function() {
 
                     // prefer native implementation
                     if ('scrollBehavior' in document.documentElement.style) {
 
                         destination.scrollIntoView({ behavior: 'smooth' });
 
-                    } else {
-
-                        scroll(destination.offsetTop, duration);
-
-                    }
-
-                    event.preventDefault();
+                    } else scroll(destination.offsetTop, duration);
 
                 });
             }
