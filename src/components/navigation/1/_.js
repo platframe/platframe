@@ -36,7 +36,9 @@ export default function() {
                 scroll(target.offsetTop, duration);
 
             }
-            event.stopPropagation;
+
+            event.stopPropagation();
+
         });
     }
 
