@@ -55,6 +55,6 @@ mixin form-1({ legend, action, method, phone, spam, hook })
 
         button(
             type="submit"
-            formaction=action
-            formmethod=method
-            ) Send Message
+            formaction=action ? action : null
+            formmethod=method ? method : null
+        ) Send Message
