@@ -10,14 +10,14 @@ export default function() {
         icon.addEventListener('mouseenter', (event) => {
 
             use.setAttribute('xlink:href', (url + '_'));
-            event.stopPropagation;
+            event.stopPropagation();
 
         });
 
         icon.addEventListener('mouseleave', (event) => {
 
             use.setAttribute('xlink:href', (url));
-            event.stopPropagation;
+            event.stopPropagation();
 
         });
 
