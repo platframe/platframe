@@ -5,8 +5,12 @@ p
     line-height: 1.5
     margin: 1rem 0
     color: _p
+    // zero-out top margin on adjacent siblings to headings
     h1 + &, h2 + &, h3 + &
     h4 + &, h5 + &, h6 + &
+    // zero-out top margin on first children of articles
+    article &:first-of-type
         margin-top: 0
+    // align paragraph color to active footer theme
     footer &
         color: scheme.footer.default
