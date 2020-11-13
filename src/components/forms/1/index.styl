@@ -1,4 +1,4 @@
-form-1(scheme = __default, width = rem(300px))
+form-1(scheme = __default, width = rem(300px), button-type = '2d')
     .form-1
         display: flex
         width: width
@@ -14,6 +14,8 @@ form-1(scheme = __default, width = rem(300px))
                 font-weight: 600
                 padding: rem(10px) 0
                 color: scheme.default
+                &.center
+                    margin 0 auto
             // parent field group
             .field
                 display: flex
@@ -22,6 +24,13 @@ form-1(scheme = __default, width = rem(300px))
                 align-items: center
                 position: relative
                 width: inherit
+                &.select
+                    margin .6rem 0
+                    justify-content space-between
+                    label
+                        margin-right .7rem
+                    select
+                        flex 1
             // most basic form
             &.core
                 // common field properties
@@ -77,5 +86,8 @@ form-1(scheme = __default, width = rem(300px))
             background-image: url('/assets/images/_sprites/views.svg#form-1-field-invalid')
         // submit button
         button
-            button()
+            if button-type is '3d'
+                button-3d()
+            else
+                button()
         { block }

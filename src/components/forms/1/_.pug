@@ -1,9 +1,24 @@
-mixin form-1({ legend, action, method, phone, spam, hook })
+mixin form-1({ legend, action, method, phone, select, spam, hook })
 
-    form(legend, class=hook ? "form-1 " + hook :  "form-1")
+    form(legend, class= hook ? "form-1 " + hook :  "form-1")
 
         fieldset.core
-            legend= legend || "Contact"
+
+            if legend
+                legend(class= legend.center ? "center" :  "")= legend.text || null
+
+            if select
+                .field.select
+
+                    label(for=`${ select.name }`)= select.label ? select.label : null
+
+                    select(name=`${ select.name }`)
+
+                        each option in select.options
+                            option(value=`
+                                ${ option.value }
+                                ${ option.selected ? option.selected : '' }`
+                            )= option.name
 
             .field
 
