@@ -21,8 +21,8 @@ function imgLink() {
 
         // stream: optimize
         src([
-            `${ source.images }/**/_link/**/*.{svg,png,gif,jpg,jpeg,webp}`,
-            `${ source.components }/**/images/_link/*.{svg,png,gif,jpg,jpeg,webp}`,
+            `${ source.images }/**/_link/**/*.{svg,png,gif,jpg,jpeg}`,
+            `${ source.components }/**/images/_link/*.{svg,png,gif,jpg,jpeg}`,
         ], {
             // exclude unchanged files on subsequent 'watch' runs
             since: lastRun(imgLink)
