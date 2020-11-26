@@ -10,8 +10,8 @@ import logic from './settings/gulp/logic';
 import notify from './settings/gulp/notify';
 import styles from './settings/gulp/styles';
 import collect from './settings/gulp/collect';
-import imgLink from './settings/gulp/img-link';
 import templates from './settings/gulp/templates';
+import imgLinked from './settings/gulp/img-linked';
 import imgSprite from './settings/gulp/img-sprite';
 import { host } from './settings/gulp/servers';
 
@@ -24,7 +24,7 @@ export const develop = series(
     parallel(
         templates,
         styles,
-        imgLink,
+        imgLinked,
         imgSprite,
         logic,
 
@@ -38,7 +38,7 @@ export const build = series(
     parallel(
         templates,
         styles,
-        imgLink,
+        imgLinked,
         imgSprite,
         logic,
 
@@ -52,7 +52,7 @@ export const preflight = series(
     parallel(
         templates,
         styles,
-        imgLink,
+        imgLinked,
         imgSprite,
         logic,
 
