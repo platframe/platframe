@@ -11,16 +11,17 @@ mixin header-3(url, icon, h1, navigation, hook)
                     =h1
 
             input(id="toggle" type="checkbox")
-            label(for="toggle" class="button")
+            label(for="toggle" class="header-3_menu-button")
 
             label(
                 for="toggle"
-                class="backdrop"
+                class="header-3_menu-backdrop"
                 tabindex="-1"
                 hidden
                 aria-hidden="true")
 
             nav(
+                class="header-3_menu"
                 role="navigation"
                 aria-label="main menu"
                 itemscope

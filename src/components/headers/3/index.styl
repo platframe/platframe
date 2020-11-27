@@ -35,7 +35,7 @@ header-3(scheme = __default)
                 align-items: center
                 letter-spacing: normal
                 +min(1)
-                    font-size: 1.4rem
+                    font-size: 1.5rem
                 a
                     display: flex
                     align-items: center
@@ -49,7 +49,7 @@ header-3(scheme = __default)
                             margin: 0 rem(6px) 0 0
                         +min(2)
                             size(rem(24px))
-            nav
+            .header-3_menu
                 position: fixed
                 width: rem(225px)
                 right: -(rem(225px))
@@ -134,12 +134,12 @@ header-3(scheme = __default)
                 position: absolute
                 top: -100%
                 left: -100%
-                &:focus + .button
+                &:focus + .header-3_menu-button
                     box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
                     +min(1)
                         box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
                 &:checked
-                    & + .button
+                    & + .header-3_menu-button
                         position: fixed
                         right: 5%
                         &:hover
@@ -152,7 +152,7 @@ header-3(scheme = __default)
                         &:after
                             transform: translateY(-50%) rotate(-45deg) scale(1)
                             top: 50%
-                    & ~ .backdrop
+                    & ~ .header-3_menu-backdrop
                         position: fixed
                         display: block
                         content: ''
@@ -162,14 +162,14 @@ header-3(scheme = __default)
                         height: 100vh
                         background: rgba(0,0,0,.8)
                         z-index: 0
-                    & ~ nav
+                    & ~ .header-3_menu
                         right: 0
                         top: 0
                         pointer-events: auto
                         box-shadow: -8px 0 18px rgba(0,0,0,.3)
                 +min(2)
                     display: none
-            .button
+            .header-3_menu-button
                 position: relative
                 display: inline-block
                 size(rem(21px))
