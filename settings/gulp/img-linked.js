@@ -29,8 +29,11 @@ export default function imgLinked() {
 
         // stream: optimize
         src([
-            `${ source.images }/**/_linked/**/!(_verbatim)/**/*.{svg,png,gif,jpg,jpeg}`,
-            `${ source.components }/**/images/_linked/**/!(_verbatim)/**/*.{svg,png,gif,jpg,jpeg}`,
+            `${ source.images }/**/_linked/**/*.{svg,png,gif,jpg,jpeg}`,
+            `${ source.components }/**/images/_linked/**/*.{svg,png,gif,jpg,jpeg}`,
+            // exclusions
+            `!${ source.images }/**/_linked/**/_verbatim/**/*.{svg,png,gif,jpg,jpeg}`,
+            `!${ source.components }/**/images/_linked/**/_verbatim/**/*.{svg,png,gif,jpg,jpeg}`,
         ], {
             // exclude unchanged files on subsequent 'watch' runs
             since: lastRun(imgLinked)
@@ -48,7 +51,12 @@ export default function imgLinked() {
             .pipe(dest(ctx.path.images)),
 
         // stream: optimize: webp
-        src([ `${ source.images }/**/_linked/**/!(_verbatim)/**/*.webp`, `${ source.components }/**/images/_linked/*.webp` ],
+        src([
+            `${ source.images }/**/_linked/**/!(_verbatim)/**/*.webp`,
+            `${ source.components }/**/images/_linked/*.webp`,
+            // exclusions
+            `!${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
+        ],
             { since: lastRun(imgLinked) })
             .on('end', () => log('Starting to optimize WebP images...'))
             .pipe(webp(webpConfig))
@@ -56,7 +64,10 @@ export default function imgLinked() {
             .pipe(dest(ctx.path.images)),
 
         // stream: verbatim: webp
-        src([ `${ source.images }/**/_linked/**/_verbatim/**/*.webp`, `${ source.components }/**/images/_linked/_verbatim/**/*.webp` ],
+        src([
+            `${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
+            `${ source.components }/**/images/_linked/_verbatim/**/*.webp`
+        ],
             { since: lastRun(imgLinked) })
             .on('end', () => log('Starting to copy WebP images...'))
             .pipe(dest(ctx.path.images))
@@ -78,8 +89,11 @@ export function imgAdded() {
 
         // stream: optimize
         src([
-            `${ source.images }/**/_linked/**/!(_verbatim)/**/*.{svg,png,gif,jpg,jpeg}`,
-            `${ source.components }/**/images/_linked/**/!(_verbatim)/**/*.{svg,png,gif,jpg,jpeg}`,
+            `${ source.images }/**/_linked/**/*.{svg,png,gif,jpg,jpeg}`,
+            `${ source.components }/**/images/_linked/**/*.{svg,png,gif,jpg,jpeg}`,
+            // exclusions
+            `!${ source.images }/**/_linked/**/_verbatim/**/*.{svg,png,gif,jpg,jpeg}`,
+            `!${ source.components }/**/images/_linked/**/_verbatim/**/*.{svg,png,gif,jpg,jpeg}`,
         ])
             .pipe(imagemin(plugins, { verbose: true }))
             .pipe(dest(ctx.path.images)),
@@ -92,14 +106,22 @@ export function imgAdded() {
             .pipe(dest(ctx.path.images)),
 
         // stream: optimize: webp
-        src([ `${ source.images }/**/_linked/**/!(_verbatim)/**/*.webp`, `${ source.components }/**/images/_linked/*.webp` ])
+        src([
+            `${ source.images }/**/_linked/**/*.webp`,
+            `${ source.components }/**/images/_linked/*.webp`,
+            // exclusions
+            `!${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
+        ])
             .on('end', () => log('Starting to optimize newly added WebP images...'))
             .pipe(webp(webpConfig))
             .on('end', () => log('Finished optimizing newly added WebP images.'))
             .pipe(dest(ctx.path.images)),
 
         // stream: verbatim: webp
-        src([ `${ source.images }/**/_linked/**/_verbatim/**/*.webp`, `${ source.components }/**/images/_linked/_verbatim/**/*.webp` ])
+        src([
+            `${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
+            `${ source.components }/**/images/_linked/_verbatim/**/*.webp`
+        ])
             .on('end', () => log('Starting to copy newly added WebP images...'))
             .pipe(dest(ctx.path.images))
             .on('end', () => log(`Finished copying newly added WebP images to the '${ ctx.path.root }' directory.`))
