@@ -10,12 +10,18 @@ columns(count, width, gap, fill = balance, span = none, rule...)
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━  EFFECTS  ━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-dropcap(color = scheme.paragraph, size = 3rem, weight = inherit, line = 1, margin = .3rem .3rem 0 0)
+dropcap(
+    color = scheme.paragraph,
+    font-size = 3rem,
+    font-weight = inherit,
+    line-height = 0.6,
+    margin = .3rem .3rem 0 0)
+
     &:first-of-type:first-letter
         color: color
-        font-size: size
-        font-weight: weight
-        line-height: line
+        font-size: font-size
+        font-weight: font-weight
+        line-height: line-height
         letter-spacing: 0
         text-transform: uppercase
         float: left
