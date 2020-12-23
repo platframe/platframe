@@ -1,6 +1,6 @@
 import { src, dest } from 'gulp';
 import { rollup } from 'rollup';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import { eslint } from 'rollup-plugin-eslint';
 import { terser } from 'rollup-plugin-terser';
@@ -48,6 +48,7 @@ function logic() {
             }),
             babel({
                 exclude: 'node_modules/**',
+                babelHelpers: 'bundled',
             }),
             (production && terser({
                 output: {
