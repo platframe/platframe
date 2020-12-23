@@ -1,11 +1,11 @@
 mixin form-1({ legend, action, method, phone, select, spam, hook })
 
-    form(legend, class= hook ? "form-1 " + hook :  "form-1")
+    form(class= hook ? "form-1 " + hook : "form-1")
 
         fieldset.core
 
             if legend
-                legend(class= legend.center ? "center" :  "")= legend.text || null
+                legend(class= legend.center ? "center" : "")= legend.text || null
 
             if select
                 .field.select
