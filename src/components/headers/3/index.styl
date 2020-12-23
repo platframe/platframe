@@ -1,4 +1,5 @@
 header-3(scheme = __default)
+
     .header-3
         position: relative
         display: flex
@@ -49,7 +50,7 @@ header-3(scheme = __default)
                             margin: 0 rem(6px) 0 0
                         +min(2)
                             size(rem(24px))
-            .header-3_menu
+            .header-3__menu
                 position: fixed
                 width: rem(225px)
                 right: -(rem(225px))
@@ -134,12 +135,12 @@ header-3(scheme = __default)
                 position: absolute
                 top: -100%
                 left: -100%
-                &:focus + .header-3_menu-button
+                &:focus + .header-3__menu-button
                     box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
                     +min(1)
                         box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
                 &:checked
-                    & + .header-3_menu-button
+                    & + .header-3__menu-button
                         position: fixed
                         right: 5%
                         &:hover
@@ -152,7 +153,7 @@ header-3(scheme = __default)
                         &:after
                             transform: translateY(-50%) rotate(-45deg) scale(1)
                             top: 50%
-                    & ~ .header-3_menu-backdrop
+                    & ~ .header-3__menu-backdrop
                         position: fixed
                         display: block
                         content: ''
@@ -162,14 +163,14 @@ header-3(scheme = __default)
                         height: 100vh
                         background: rgba(0,0,0,.8)
                         z-index: 0
-                    & ~ .header-3_menu
+                    & ~ .header-3__menu
                         right: 0
                         top: 0
                         pointer-events: auto
                         box-shadow: -8px 0 18px rgba(0,0,0,.3)
                 +min(2)
                     display: none
-            .header-3_menu-button
+            .header-3__menu-button
                 position: relative
                 display: inline-block
                 size(rem(21px))
