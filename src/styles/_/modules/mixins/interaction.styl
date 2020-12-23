@@ -47,11 +47,19 @@ button(
 
 button-3d(
     type = 'light',
-    color = rgba(190,190,190,.7),
+    color = 'default',
     font-size = 1.1rem,
     font-weight = normal,
     border-radius = 4px,
-    padding = .9rem 2rem)
+    padding = 1rem 2rem)
+
+    // if no color argument given, set
+    // it to a default based on type
+    if color is 'default'
+        if type is 'dark'
+            color = rgba(76, 76, 76, 0.7)
+        else
+            color = rgba(190, 190, 190, 0.7)
 
     // common styles
     display: inline-block
@@ -91,7 +99,7 @@ button-3d(
         color: lighten(color, 77%)
         border: none
         text-shadow: -1px -1px 0 darken(color, 55%)
-        background: linear-gradient(to top, color, darken(color, 33%))
+        background: linear-gradient(to bottom, color, darken(color, 33%))
         box-shadow: \
                 0 0 5px darken(color, 55%),               // D (perimeter)
                 inset 0 1px 1px lighten(color, 15%),      // L (top)
