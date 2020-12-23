@@ -1,0 +1,9 @@
+mixin carousel-1({ images, hook })
+
+    div(class= hook ? "carousel-1 " + hook :  "carousel-1")
+
+        each image in images
+
+            img(src= image.path
+                class=`image ${ image.active ? 'active' : ''}`
+                alt= image.alt)

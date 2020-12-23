@@ -1,0 +1,22 @@
+carousel-1(scheme = __default, width = 100%, height = auto)
+    .carousel-1
+        position: relative
+        width: width
+        height: height
+        min-height: inherit
+        display: flex
+        background: _0
+        .image
+            position: absolute
+            size(100%)
+            top: 0
+            right: 0
+            opacity: 0
+            object-fit: cover
+            object-position: center
+            transition: opacity 3s ease
+            z-index: 1
+            &.active
+                opacity: 1
+                z-index: 2
+        { block }
