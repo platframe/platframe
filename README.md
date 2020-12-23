@@ -1,6 +1,6 @@
 <p align="center" xmlns="http://www.w3.org/1999/html">
     <a href="https://platframe.com">
-        <img src="https://platframe.com/assets/images/external/_link/platframe.svg" width=100 height=100>
+        <img src="https://platframe.com/assets/images/external/_linked/platframe.svg" width=100 height=100>
     </a>
 </p>
 
