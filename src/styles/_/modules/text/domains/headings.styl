@@ -5,7 +5,15 @@ h1, h2, h3, h4, h5, h6
     font-weight: bold
     line-height: 1.35
     color: _heading
+    // top margin of firsts
+    div     > &:first-child
+    section > &:first-child
+    article > &:first-child
+    aside   > &:first-child
+        margin-top: 0
+    // align sub-node attrs
     span, a
+        color: inherit
         font-weight: inherit
 
 h1

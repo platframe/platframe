@@ -9,7 +9,7 @@ p
     h1 + &, h2 + &, h3 + &
     h4 + &, h5 + &, h6 + &
     // zero-out top margin on first children of articles
-    article &:first-of-type
+    article > &:first-child
         margin-top: 0
     // align paragraph color to active footer theme
     footer &
