@@ -1,0 +1,57 @@
+&__thumb
+    display flex
+    align-items flex-start
+    position: relative
+    width: column_width
+    height: @width
+    border-radius: 3px
+    background: _55
+    box-shadow -1px 1px 1px _45, -2px 2px 2px _55
+    +min(1)
+        width: column_width_1
+        height: @width
+    +min(2)
+        width: column_width_2
+        height: @width
+    +min(3)
+        width: column_width_3
+        height: @width
+    &-image
+        position absolute
+        size(100%)
+        top: 0
+        right: 0
+        border-radius: 3px
+        object-fit: cover
+        object-position: center
+    &:hover .gallery-1__thumb-caption
+        opacity: 1
+    &-caption
+        display: flex
+        position: absolute
+        justify-content: center
+        align-items: flex-end
+        opacity 0
+        top: 0
+        left: @top
+        width: column_width
+        height: @width
+        padding: 1rem
+        color: rgba(255,255,255,0.9)
+        text-align center
+        text-shadow -2px 2px 6px rgba(0,0,0,0.5)
+        border-radius: 3px
+        transition: opacity .3s ease
+        background: radial-gradient(
+            rgba(0,0,0,0.2) 0%,
+            rgba(0,0,0,0.8) 100%)
+        z-index 2
+        +min(1)
+            width: column_width_1
+            height: @width
+        +min(2)
+            width: column_width_2
+            height: @width
+        +min(3)
+            width: column_width_3
+            height: @width

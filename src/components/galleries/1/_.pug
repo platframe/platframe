@@ -1,0 +1,57 @@
+mixin gallery-1({ series, path, type, images, hook })
+
+    div(
+        data-series=`${ series }`,
+        class= hook ? "gallery-1 " + hook : "gallery-1")
+
+        each image, key in images
+
+            //- gallery has a 1-based index
+            - const id = key + 1;
+            //- build the image's source path
+            - const source = `${ image.path || path }${ image.name || id }.${ image.type || type || 'jpg' }`;
+
+            .gallery-1__item(data-id= id)
+
+                a.gallery-1__thumb(href=`#${ series }-${ id }`)
+
+                    img.gallery-1__thumb-image(
+                        src= source
+                        width="100%"
+                        height="auto"
+                        loading="lazy"
+                        alt="image thumbnail")
+
+                    span.gallery-1__thumb-caption= image.caption
+
+                .gallery-1__modal(id=`${ series }-${ id }`)
+
+                    a.gallery-1__modal-close(href="#")
+
+                    figure.gallery-1__modal-image-wrapper
+
+                        .gallery-1__modal-image
+
+                            img(src= source
+                                width="100%"
+                                height="auto"
+                                loading="lazy"
+                                alt= image.caption)
+
+                            button(
+                                class="gallery-1__modal-nav " +
+                                      "gallery-1__modal-nav-left"
+                                ): svg: use(xlink:href="/assets/images/_sprites/symbols.svg#gallery-1__modal-nav-left")
+
+                            button(
+                                class="gallery-1__modal-nav " +
+                                      "gallery-1__modal-nav-right"
+                                ): svg: use(xlink:href="/assets/images/_sprites/symbols.svg#gallery-1__modal-nav-right")
+
+                            button(
+                                class="gallery-1__modal-nav " +
+                                      "gallery-1__modal-nav-pause"
+                                )
+
+                        figcaption.gallery-1__modal-meta
+                            span.gallery-1__modal-meta-caption= image.caption

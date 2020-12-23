@@ -1,0 +1,33 @@
+gallery-1(scheme = __default)
+
+    // grid column width adjusted for breakpoints
+    column_width   = 34vw
+    column_width_1 = 22vw
+    column_width_2 = 14vw
+    column_width_3 = rem(212px)
+
+    .gallery-1
+        display: grid
+        grid-auto-flow: row
+        grid-template-rows: auto
+        grid-template-columns: repeat(2, column_width)
+        column-gap: 7.5vw
+        row-gap: @column-gap
+        +min(1)
+            column-gap: 5vw
+            row-gap: @column-gap
+            grid-template-columns: repeat(3, 22vw)
+        +min(2)
+            column-gap: 2.8vw
+            row-gap: @column-gap
+            grid-template-columns: repeat(4, 14vw)
+        +min(3)
+            column-gap: rem(38px)
+            row-gap: @column-gap
+            grid-template-columns: repeat(5, rem(212px))
+
+        &__item
+            min-width: rem(110px)
+
+        @require '_thumb'
+        @require '_modal'
