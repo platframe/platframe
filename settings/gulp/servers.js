@@ -1,14 +1,9 @@
 import { create } from 'browser-sync';
-import c from 'ansi-colors';
 import { app, ctx } from '..';
 
 const server = create();
 const production = ctx.id === 'production';
-
-const log = `\u{00A0}${ c.white('Watching source, waiting to synchronize...') }
-\u{00A0} ${ c.gray('project:') } ${ c.yellow.dim(app.name.charAt(0).toUpperCase().concat(app.name.slice(1))) }
-\u{00A0} ${ c.gray('version:') } ${ c.green.dim(`v${ app.version }`) }
-\u{00A0} ${ c.gray('context:') } ${ c.red.dim(`${ ctx.id }`) }\u{00A0}\n`;
+const log = `\u{00A0}watching source... | ${ app.name } | ${ app.version } | env: ${ ctx.id }\u{00A0}`;
 
 const options = {
     logPrefix: production ? '' : log,
