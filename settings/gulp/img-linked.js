@@ -58,7 +58,6 @@ export default function imgLinked() {
             `!${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
         ],
             { since: lastRun(imgLinked) })
-            .on('end', () => log('Starting to optimize WebP images...'))
             .pipe(webp(webpConfig))
             .on('end', () => log('Finished optimizing WebP images.'))
             .pipe(dest(ctx.path.images)),
@@ -69,7 +68,6 @@ export default function imgLinked() {
             `${ source.components }/**/images/_linked/_verbatim/**/*.webp`
         ],
             { since: lastRun(imgLinked) })
-            .on('end', () => log('Starting to copy WebP images...'))
             .pipe(dest(ctx.path.images))
             .on('end', () => log(`Finished copying WebP images to the '${ ctx.path.root }' directory.`))
 
@@ -112,7 +110,6 @@ export function imgAdded() {
             // exclusions
             `!${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
         ])
-            .on('end', () => log('Starting to optimize newly added WebP images...'))
             .pipe(webp(webpConfig))
             .on('end', () => log('Finished optimizing newly added WebP images.'))
             .pipe(dest(ctx.path.images)),
@@ -122,7 +119,6 @@ export function imgAdded() {
             `${ source.images }/**/_linked/**/_verbatim/**/*.webp`,
             `${ source.components }/**/images/_linked/_verbatim/**/*.webp`
         ])
-            .on('end', () => log('Starting to copy newly added WebP images...'))
             .pipe(dest(ctx.path.images))
             .on('end', () => log(`Finished copying newly added WebP images to the '${ ctx.path.root }' directory.`))
 
