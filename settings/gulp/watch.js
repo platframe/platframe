@@ -1,4 +1,5 @@
 import { watch, series } from 'gulp';
+import log from 'fancy-log';
 import templates from './templates';
 import styles from './styles';
 import logic from './logic';
@@ -15,39 +16,76 @@ function watcher() {
         `${ src.templates }/**/*.pug`,
         `${ src.components }/**/*.pug`,
         `${ src.images }/**/_inline/**/*`,
-    ], series(templates, reload));
+    ],
+        series(
+            async () => log('\u{1F4C4}\u{00A0} Rebuilding templates...'),
+            templates,
+            reload
+        )
+    );
 
     //// styles & images: inline
     watch([
         `${ src.styles }/**/*.styl`,
         `${ src.components }/**/*.styl`,
         `${ src.images }/**/_inline/**/*`,
-    ], series(styles, reload));
+    ],
+        series(
+            async () => log('\u{1F3A8}\u{00A0} Rebuilding styles...'),
+            styles,
+            reload
+        )
+    );
 
     //// logic
     watch([
         `${ src.logic }/**/*.js`,
         `${ src.components }/**/*.js`,
-    ], series(logic, reload));
+    ],
+        series(
+            async () => log('\u{1F4BE}\u{00A0} Rebuilding logic...'),
+            logic,
+            reload
+        )
+    );
 
     //// images: linked
-    watch([ // existing modified images
-        `${ src.images }/**/_linked/**/*`,
-    ], { events: 'change' }, series(imgExisting, reload));
+    watch(`${ src.images }/**/_linked/**/*`, { events: 'change' },
+        series(
+            async () => log('\u{1F5BC}\u{FE0F}\u{00A0} Rebuilding linked images...'),
+            imgExisting,
+            reload
+        )
+    );
 
-    watch([ // new images
-        `${ src.images }/**/_linked/**/*`,
-    ], { events: 'add' }, series(imgAdded, reload));
+    watch(`${ src.images }/**/_linked/**/*`, { events: 'add' },
+        series(
+            async () => log('\u{1F5BC}\u{FE0F}\u{00A0} Adding linked images...'),
+            imgAdded,
+            reload
+        )
+    );
 
     //// images: sprites
     watch([
         `${ src.root }/**/_views/*.svg`,
         `${ src.root }/**/_symbols/*.svg`,
-    ], series(imgSprite, reload));
+    ],
+        series(
+            async () => log('\u{1F58C}\u{FE0F}\u{00A0} Rebuilding SVG sprite sheets...'),
+            imgSprite,
+            reload
+        )
+    );
 
     //// fonts
     watch(`${ src.fonts }/**/*.{ttf,svg,woff*}`,
-        series(collect, reload));
+        series(
+            async () => log('\u{1F524}\u{00A0} Rebuilding fonts...'),
+            collect,
+            reload
+        )
+    );
 
 }
 
