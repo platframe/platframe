@@ -108,7 +108,8 @@ Install the dependencies:
 Alternatively, setup your VCS as part of the installation run:
 - `cd my-app && git init && yarn`
 
-Change the default metadata in `package.json` to reflect your project. If you intend to use `.env`, remove its `.sample` extension.
+If you intend to use `.env`, remove its `.sample` extension.  
+Change the default metadata in `package.json` to reflect your project.  
 
 ### Develop
 Spin up the development environment by running `yarn develop`  
