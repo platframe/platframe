@@ -2,14 +2,14 @@
   "name": "new-project",
   "version": "1.0.0",
   "scripts": {
-    "start": "NODE_ENV=development gulp",
-    "lint": "NODE_ENV=production eslint --fix src/",
+    "start": "npm run develop",
+    "develop": "env $(cat .env.dev | grep -v \"#\" | xargs) gulp -S",
+    "build": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp build",
     "test": "npm run lint",
-    "develop": "NODE_ENV=development gulp",
-    "build": "NODE_ENV=production gulp build",
-    "preflight": "NODE_ENV=production gulp preflight",
-    "deploy": "NODE_ENV=production gulp deploy",
-    "serve": "NODE_ENV=production gulp serve"
+    "lint": "env $(cat .env.prd | grep -v \"#\" | xargs) eslint --fix src/",
+    "preflight": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp preflight",
+    "deploy": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp deploy",
+    "serve": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp serve"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,6 @@
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
-    "ansi-colors": "^4.1.1",
     "autoprefixer": "^9.7.5",
     "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",

@@ -1,5 +1,5 @@
 const // cache environment context
-    ENV = process.env.NODE_ENV || 'development',
+    ENV = process.env.PLATFRAME_ENV || 'development',
 
     // input
     SRC = 'src',

@@ -8,6 +8,10 @@
 # deps
 node_modules/
 
+# environments
+.env.dev
+.env.prd
+
 ### 3RD PARTY
 
 # VS Code
