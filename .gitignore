@@ -9,8 +9,7 @@
 node_modules/
 
 # environments
-.env.dev
-.env.prd
+.env
 
 ### 3RD PARTY
 

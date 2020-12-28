@@ -1,5 +1,6 @@
 const // cache environment context
-    ENV = process.env.PLATFRAME_ENV || 'development',
+    { env } = process,
+    ENV = env.NODE_ENV || 'production',
 
     // input
     SRC = 'src',
@@ -12,14 +13,13 @@ const // cache environment context
 
     // config: meta
     app = {
-        name   : process.env.npm_package_name,
+        name   : env.npm_package_name,
         // ISO 8601 at zero UTC offset
         date   : (new Date).toISOString(),
         // seconds elapsed since UNIX epoch
         time   : Math.floor(Date.now() / 1000),
-        port   : process.env.npm_package_config_port,
-        author : process.env.npm_package_author_name,
-        version: process.env.npm_package_version,
+        author : env.npm_package_author_name,
+        version: env.npm_package_version,
     },
 
     // config: source
@@ -36,13 +36,13 @@ const // cache environment context
     development = {
         id: 'development',
         app: {
-            host: '0.0.0.0',
-            port: 3000,
+            host: env.PLATFRAME_APP_HOST || '0.0.0.0',
+            port: env.PLATFRAME_APP_PORT || 3000,
         },
         db: {
-            host: '0.0.0.0',
-            port: 27017,
-            name: 'test',
+            host: env.PLATFRAME_DB_HOST || '0.0.0.0',
+            port: env.PLATFRAME_DB_PORT || 27017,
+            name: env.PLATFRAME_DB_NAME || 'test',
         },
         path: {
             root:   `${ OUT }`,
@@ -56,13 +56,13 @@ const // cache environment context
     production = {
         id: 'production',
         app: {
-            host: '0.0.0.0',
-            port: 3000,
+            host: env.PLATFRAME_APP_HOST || '0.0.0.0',
+            port: env.PLATFRAME_APP_PORT || 3000,
         },
         db: {
-            host: '0.0.0.0',
-            port: 27017,
-            name: '',
+            host: env.PLATFRAME_DB_HOST || '0.0.0.0',
+            port: env.PLATFRAME_DB_PORT || 27017,
+            name: env.PLATFRAME_DB_NAME || '',
         },
         path: {
             root:   `${ OUT }/`,

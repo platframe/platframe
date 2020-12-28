@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npm run develop",
-    "develop": "env $(cat .env.dev | grep -v \"#\" | xargs) gulp -S",
-    "build": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp build",
+    "develop": "NODE_ENV=development gulp -S",
+    "build": "gulp build",
     "test": "npm run lint",
-    "lint": "env $(cat .env.prd | grep -v \"#\" | xargs) eslint --fix src/",
-    "preflight": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp preflight",
-    "deploy": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp deploy",
-    "serve": "env $(cat .env.prd | grep -v \"#\" | xargs) gulp serve"
+    "lint": "eslint --fix src/",
+    "preflight": "gulp preflight",
+    "deploy": "gulp deploy",
+    "serve": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "fancy-log": "^1.3.3",
     "ghooks": "^2.0.4",

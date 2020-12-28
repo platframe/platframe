@@ -1,3 +1,7 @@
+/* SET CONTEXT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import context from 'dotenv'; context.config();
+
 /* GULP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 import { series, parallel } from 'gulp';

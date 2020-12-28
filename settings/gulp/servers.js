@@ -7,7 +7,7 @@ const log = `\u{00A0}watching source... | ${ app.name } | ${ app.version } | env
 
 const options = {
     logPrefix: production ? '' : log,
-    port: app.port,
+    port: ctx.app.port,
     // DNS lookup and external address
     online: true,
     // make server publicly accessable
