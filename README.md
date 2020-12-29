@@ -14,6 +14,7 @@
     <a href="https://travis-ci.org/platframe/platframe"><img src="https://travis-ci.org/platframe/platframe.svg?branch=master"></a>
     <a href="https://www.codacy.com/app/platframe/platframe?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=platframe/platframe&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/e2faa208e2b94932b4612df9cf306bd5"/></a>
     <a href="https://david-dm.org/platframe/platframe?type=dev"><img src="https://david-dm.org/platframe/platframe/dev-status.svg"></a>
+    <a href="https://app.netlify.com/sites/platframe-branch-master/deploys"><img src="https://api.netlify.com/api/v1/badges/2ba198a8-5364-4a8d-b660-81c4ac0f2225/deploy-status" alt="Netlify Status"></a>
     <!-- <a href="http://t.me/platframe"><img src="https://img.shields.io/badge/telegram-chat-30A7DE.svg"></a> -->
 </p>
 
