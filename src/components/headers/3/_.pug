@@ -7,10 +7,9 @@ mixin header-3(url, icon, h1, navigation, hook)
         div
             h1
                 a(href=url class="logo")
-                    if icon
-                        svg: use(xlink:href=icon ?
-                                `/assets/images/_sprites/symbols.svg#"${ icon }` :
-                                "/assets/images/_sprites/symbols.svg#header-3-logo")
+                    svg: use(xlink:href=icon ?
+                            `/assets/images/_sprites/symbols.svg#${ icon }` :
+                            "/assets/images/_sprites/symbols.svg#header-3-logo")
                     =h1
 
             input(id="toggle" type="checkbox")
