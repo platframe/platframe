@@ -5,7 +5,6 @@ form-1(scheme = __default, width = rem(300px), button-type = '2d')
         flex-flow: row wrap
         justify-content: center
         align-content: flex-start
-        scheme.default
         fieldset
             width: 100%
             margin-bottom: rem(25px)
@@ -44,14 +43,13 @@ form-1(scheme = __default, width = rem(300px), button-type = '2d')
                     &::placeholder { color: _60 }
                     // feedback cues
                     & + .cue::after
+                        position: absolute
                         display: flex
                         content: ''
+                        top: rem(2px)
                         width: rem(38px)
                         height: @width
-                        position: absolute
-                        top: rem(4px)
-                        margin-left: rem(3px)
-                        margin-right: rem(-20px) // adjust for images
+                        margin-left: rem(-4px)
                         background-size: cover
                         background-repeat: no-repeat
                         background-color: transparent
@@ -59,7 +57,7 @@ form-1(scheme = __default, width = rem(300px), button-type = '2d')
             &.spam
                 color: scheme.default
                 font-weight: 600
-                width: 14.4rem
+                width: 14.5rem
                 margin: inherit auto
                 span
                     float: left
