@@ -1,4 +1,3 @@
-<svg version="1.1" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
- <rect x="4" y="4.8235" width="20" height="130.35" ry="10" style="fill:#fff;stroke-linecap:round;stroke-width:3.6482"/>
- <rect x="76" y="4.8235" width="20" height="130.35" ry="10" style="fill:#fff;stroke-linecap:round;stroke-width:3.6482"/>
+<svg version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+ <path d="m22.382-6e-7c-4.2501 0-7.6717 3.4216-7.6717 7.6717v84.657c0 4.2501 3.4216 7.6717 7.6717 7.6717 4.2501 0 7.6717-3.4216 7.6717-7.6717v-84.657c0-4.2501-3.4216-7.6717-7.6717-7.6717zm55.236 0c-4.2501 0-7.6717 3.4216-7.6717 7.6717v84.657c0 4.2501 3.4216 7.6717 7.6717 7.6717 4.2501 0 7.6717-3.4216 7.6717-7.6717v-84.657c0-4.2501-3.4216-7.6717-7.6717-7.6717z" style="fill:#fff;"/>
 </svg>
