@@ -68,11 +68,13 @@
             color rgba(255,255,255,0.6)
     &-image-wrapper
         position: relative
+        overflow: auto
         +max(2)
             display flex
             height 100%
             flex-direction: column
         +min(2)
+            max-width 65%
             max-height 65vh
             box-shadow -5px 5px 10px rgba(0,0,0,0.5)
     &-image
