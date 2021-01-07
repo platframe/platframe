@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Logic for the gallery-1 component.
  * @module index

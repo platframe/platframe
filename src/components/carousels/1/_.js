@@ -1,5 +1,3 @@
-'use strict';
-
 export default ({
     delay = 4000,
     slide: slideClass = 'image',

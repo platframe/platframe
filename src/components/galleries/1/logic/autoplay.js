@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Autoplay module for gallery-1.
  * @module autoplay

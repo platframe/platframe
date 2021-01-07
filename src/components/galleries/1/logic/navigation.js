@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Navigation module for gallery-1.
  * @module navigation
