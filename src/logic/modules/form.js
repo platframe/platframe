@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Client-side form processing for Platframe.
  * @module form
